@@ -11,17 +11,93 @@
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
-\setlength\parindent{0pt}
+\usepackage{color}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{changepage}
+\usepackage{threeparttablex}
 
 \usepackage{cite}
+	\renewcommand\citepunct{,}
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage[hidelinks=true,bookmarks=true,hyperindex,breaklinks]{hyperref}
+	\hypersetup{bookmarksdepth=paragraph,colorlinks=true,linkcolor=Navy,urlcolor=DarkBlue,citecolor=DarkBlue}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[authoryear,comma,round,semicolon]{natbib}
+	\newcommand*{\doi}[1]{\href{http://dx.doi.org/#1}{doi: #1}}
+	\setlength{\bibsep}{5pt} % plus 0.3ex
+	%\setlength\parindent{10pt}
+	\setlength\parindent{0pt}
+	\setlength\bibhang{0em}
+%\bibliographystyle{agsm}
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrvnat}
+%\bibliographystyle{unsrtnat}
+\bibliographystyle{dcu}
+%\bibliographystyle{apalike}
+\usepackage{url}
+
+\usepackage{soul}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{float}
+\usepackage[labelfont=bf,labelsep=period,font=singlespacing,skip=-10pt,hypcapspace=0pt,margin=5mm]{caption}
+	\captionsetup[boxed]{skip=0pt,margin=5mm}
+	\setlength{\belowcaptionskip}{-10pt}
+\usepackage{graphicx}
+	
+\usepackage{listings}   
+\usepackage{setspace}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+%\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolour}{RGB}{255,250,240}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},  
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \usepackage{array}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{2pt}}m{#1}}
 
 \usepackage{tabularx}
-
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\graphicspath{{figures/}} % path to folder with figures
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{gensymb} % for \textdegree
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{graphics}
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepmagenta}{RGB}{195,12,214}
+\usepackage{multicol}
 % ===============================================================================================
 % start of the EDITOR section
 % ===============================================================================================
@@ -75,6 +151,7 @@
 % end of the EDITOR section
 % -----------------------------------------------------------------------------------------------
 
+\graphicspath{{figures/}} % path to folder with figures
 
 \begin{document}
 \sloppy
@@ -86,11 +163,10 @@
 % start of the AUTHOR section
 % ===============================================================================================
 
-% title 
+% title A script-driven approach to mapping satellite-derived topography and gravity data over Zagros Fold and Thrust Belt, Iran
 
 \begin{center}{\large\bf\uppercase{
-Title of the paper presented below\\
-as a template of the contribution}}
+Title}}
 \end{center}
 
 \vspace*{4pt}
@@ -99,16 +175,15 @@ as a template of the contribution}}
 
 \begin{center}
 \textls{
-Name1 \uppercase{Surname1}$^1$, Name2 \uppercase{Surname2}$^2$, Name3 \uppercase{Surname3}$^1$ \\
+Polina \uppercase{Lemenkova}$^1$  \\
 
 \vspace{6pt}
 
-$^1$Affiliation1, City1, Country1 \\
-$^2$Affiliation2, City2, Country2 \\
+$^1$Universität Salzburg, Faculty of Digital and Analytical Sciences, \\ Department of Geoinformatics, Schillerstraße 30, A-5020 Salzburg, Austria. \\
 
 \vspace{6pt}
 
-e-mails: xxx@xx.xx, yyy@yy.yy, zzz@zz.zz\\
+e-mails: polina.lemenkova@plus.ac.at \\
 }
 \end{center}
 
@@ -116,106 +191,279 @@ e-mails: xxx@xx.xx, yyy@yy.yy, zzz@zz.zz\\
 
 % abstract and keywords
 
-{\bf ABSTRACT.} The abstract should contain no more than 250 words. The abstract should state briefly the purpose of the research, the principal results and major conclusions. An abstract is often presented separate from the paper, so it must be able to stand alone. References should therefore be avoided, but if essential, they must be cited in full, without reference to the reference list. Non-standard or uncommon abbreviations should be avoided, but if essential they must be defined at their first mention in the abstract itself.
+{\bf ABSTRACT.} Text. 
 
-\newpar {\bf Keywords:} Immediately after the abstract, provide a maximum of 5 keywords, avoiding plural terms, multiple concepts as well as "and", "of".
-
-% article content
+\newpar {\bf Keywords:} West Africa; GRASS GIS; Satellite Image; Remote Sensing; Saline Lake.
 
 \newsection {1. INTRODUCTION}
 
-\newpar Provide the objectives of the work and an adequate background, avoiding a detailed literature survey or a summary of the results. The first paragraph should be written with no ident. All cited papers, i.e. (Surname1, 2000a), (Surname1, 2000b), (Surname3 and Surname4, 2002), and  Surname3 et al. (2003) should appear in alphabetic order, by the surname of the first author. Please ensure that every reference cited in the text is also present in the reference list. 
+\subsection*{1.1. Background}
 
-\newpar The second paragraph as well as the next ones should have no ident. Subsequent paragraphs should be separated by a vertical space of 6 pt. The font used in the text is Times New Roman, size 12 pt., with leading equal to 1 pt. Headline parameters for sections: bold, uppercase letters, 12 pt.; for subsections: bold, 12 pt., for subsubsections: italics, 12 pt. In each level the heading is separated by a break 12 pt. before and 6 pt. after.
+\newpar Text
 
-\newsection {2. NEXT SECTION}
+\subsection*{1.2. Objectives and Motivation}
 
-\newpar The first paragraph should be written with no ident. Please write your text in good English (American or British usage is accepted, but not a mixture of them), do not use hyphenation. Figures and tables should follow caption. The captions of the figures should follow the figures and the titles of the tables should come before the tables. Figure 1 presents the cover of the Artificial Satellites, Journal of Planetary Geodesy. The figure and table captions should be in font 11 pt. with the word "Figure"/"Table" and the number in bold.
+\newpar Text
 
-% sample figure
+\subsection*{1.3. Study Area}
 
-\begin{center}
-\includegraphics[height=5.0cm]{Artsat_cover.jpg}
+\newpar Text
 
-\vspace{6pt}	
-\figtab {\bf Figure 1.} The cover of the  Artificial Satellites, Journal of Planetary Geodesy
-\end{center}
+\newsection {2. MATERIALS AND METHODS}
 
-\newpar The second paragraph as well as the next ones should have no ident. Table 1 presents the number of the issues of the Artificial Satellites, Journal of Planetary Geodesy, edited in the years 2001-2004. If part of the table is on the next page, it is necessary to repeat the header row.
+\newpar Text
 
-% sample table
+\newsection {3. RESULTS AND DISCUSSION}
 
-\begin{center}
-\figtab {\bf Table 1.} The  number of the issues of the Artificial Satellites edited in the years 2001-2004
-\begin{center}
-  \begin{tabular}[5pt]{|C{2.0cm}|C{4.0cm}|}
-    \hline
-    \bf{Year} & \bf{Number of issues} \\ \hline
-    2001 & 4 \\ \hline
-    2002 & 4 \\ \hline
-    2003 & 4 \\ \hline
-    2004 & 4 \\
-    \hline
-  \end{tabular}
-\end{center}
-\end{center}
+\subsection*{Title}
 
-\newsection {3. SECTION WITH SUBSECTIONS}
+\newpar Text.
 
-\newpar In the case of a well-developed article structure, subsections should be used to preserve readability.
+\newsection {4. CONCLUSIONS}
 
-\newsubsection {3.1. First subsection}
+\newpar Text.
+\vspace{12pt}
 
-\newpar Multilevel numbering should precede the title of each subsequent subsection.
+\newsection {ABBREVIATIONS}
+\vspace{12pt}
 
-\newpar Equations should be placed within the text (1). They should be centered and numbered successively with Arabic numerals (minor non-referenced expressions might be not numbered). The equation’s number should be positioned in parentheses right justified at the line of the equation:
-
-% sample equation
-
-\begin{equation}
-   \label{simple_equation}
-   \alpha = \sqrt{ \beta }
-\end{equation}
-
-where: \\
-\tab[1cm]$\alpha$	\tab[0.5cm]~--	\tab[0.5cm]first variable description; \\
-\tab[1cm]$\beta$	\tab[0.5cm]~--	\tab[0.5cm]second variable description.
-
-\newsubsection {3.2. Second subsection}
-
-\newpar If you use the \LaTeX template, you should start sections, subsections and subsubsections with the appropriate command, defined on the beginning of the file. Each subsequent paragraph should begin with the \textit{"newpar"} command. Similarly, for references use \textit{"newref"}, while for figure and table captions - \textit{"figtab"}.
-
-\pagebreak % if necessary, use the command to break the page
-
-\newsubsubsection {3.2.1. First subsubsection}
-
-\newpar If the next level is necessary – the next level can be used. 
-
-\newsubsubsection {3.2.2. Second subsubsection}
-
-\newpar Consistently use multi-level numbering. 
-
-\newsection {3. CONCLUSIONS}
-
-\newpar Each contribution submitted to publication in our Journal should have original conclusions and, like in the introduction, the first paragraph should be written with no ident.
+\begin{tabular}{@{}ll}
+DCW & Digital Chart of the World \\
+EPSG & European Petroleum Survey Group \\
+ESA & European Space Agency \\
+ESRI & Environmental Systems Research Institute \\
+GEBCO & General Bathymetric Chart of the Oceans \\
+GIS & Geographic Information System \\
+GMT & Generic Mapping Tools \\
+Landsat OLI/TIRS & Landsat Operational Land Imager and the Thermal Infrared Sensor \\
+MODIS & Moderate Resolution Imaging Spectroradiometer \\
+NASA & National Aeronautics and Space Administration \\
+SPOT & Satellite Pour l'Observation de la Terre \\
+SRTM & Shuttle Radar Topography Mission \\
+USGS & United States Geological Survey \\
+UTM & Universal Transverse Mercator \\
+WGS & World Geodetic System \\
+\end{tabular}
 
 \vspace{12pt}
 
-% acknowledgments - optional
+\newsection {APPENDIX}
+\vspace{12pt}
 
-{\bf Acknowledgements.} Acknowledgements are optional. Place acknowledgements in a separate section at the end of the article and do not, therefore, include them on the title page, as a footnote to the title or otherwise.
+\subsection*{GMT cartographic scripts}
 
-% references
+\begin{lstlisting}[language=bash, caption=GMT code for cartographic data visualization,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:01}]
+gmt grdcut ETOPO1_Ice_g_gmt4.grd -R-13/5/9.5/25.5 -Gml1_relief.nc
+gmt grdcut GEBCO_2019.nc -R-13/5/9.5/25.5 -Gml_relief.nc
+gdalinfo -stats ml1_relief.nc
+gmt makecpt -Csrtm -V -T27/1590 > pauline.cpt
+gmt pscoast -R-13/5/9.5/25.5 -JD-4/18/9.5/25.5/6.5i -Dh -M -EML > Mali.txt
+ps=Topo_ML.ps
+gmt grdimage ml_relief.nc -Cpauline.cpt -R-13/5/9.5/25.5 \
+	-JD-4/18/9.5/25.5/6.5i -I+a15+ne0.75 -t40 -Xc -P -K > $ps
+gmt grdcontour ml1_relief.nc -R -J -C1000 -A1000+f7p,26,darkbrown \
+	-Wthinner,darkbrown -O -K >> $ps
+gmt pscoast -R -J -Ia/thin,blue -Na -N1/thick,tomato -W0.1p -Df -O -K >> $ps
+gmt psclip -R-13/5/9.5/25.5 -JD-4/18/9.5/25.5/6.5i Mali.txt -O -K >> $ps
+gmt grdimage ml_relief.nc -Cpauline.cpt -R-13/5/9.5/25.5 \
+	-JD-4/18/9.5/25.5/6.5i -I+a15+ne0.75 -Xc -P -O -K >> $ps
+gmt grdcontour ml1_relief.nc -R -J -C500 -Wthinnest,darkbrown -O -K >> $ps
+gmt pscoast -R -J -Ia/thin,blue -Na -N1/thick,tomato -W0.1p -Df -O -K >> $ps
+gmt psclip -C -O -K >> $ps   
+gmt psscale -Dg-13.3/8.1+w16.5c/0.15i+h+o0.3/0i+ml+e -R -J -Cpauline.cpt \
+    -Bg50f10a100+l"Colormap: 'earth' Colors for global topography relief \
+    	[R=-T29/896, H, C=RGB]" -I0.2 -By+lm -O -K >> $ps
+gmt psbasemap -R -J  -Bpxg4f1a2 -Bpyg4f2a2 -Bsxg2 -Bsyg2 \
+	-B+t"Topographic map of Mali" -O -K >> $ps
+gmt psbasemap -R -J -Lx14.0c/-2.4c+c10+w500k+l"Equidistant conic \ 
+	projection. Scale (km)"+f -UBL/0p/-70p -O -K >> $ps
+gmt pstext -R -J -N -O -K -F+f11p,21,lemonchiffon+jLB >> $ps << EOF
+-5.67 12.50 Koutiala
+EOF
+gmt psxy -R -J -Sc -W0.5p -Gyellow -O -K << EOF >> $ps
+-5.47 12.38 0.20c
+EOF
+# ditto for all the cities and objects with adjusted coordinates
+gmt psbasemap -R -J -O -K -DjTL+w3.5c+o-0.2c/-0.2c+stmp >> $ps
+read x0 y0 w h < tmp
+gmt pscoast --MAP_GRID_PEN_PRIMARY=thin,grey -Rg -JG-1.0/8.0N/$w -Da \
+	-Glightgoldenrod1 -A5000 -Bga -Wfaint -EML+gred -Sdodgerblue \
+	-O -K -X$x0 -Y$y0 >> $ps
+gmt psxy -R -J -O -K -T  -X-${x0} -Y-${y0} >> $ps
+gmt logo -Dx7.0/-3.1+o0.1i/0.1i+w2c -O -K >> $ps
+gmt pstext -R0/10/0/15 -JX10/10 -X0.5c -Y8.7c -N -O \
+    -F+f10p,0,black+jLB >> $ps << EOF
+2.5 10.4 Digital elevation data: SRTM/GEBCO, 15 arc sec resolution grid
+EOF
+gmt psconvert Topo_ML.ps -A0.5c -E720 -Tj -Z
+\end{lstlisting}
 
-\newsection {REFERENCES}
+\subsection*{R code for NDVI computation and mapping}
 
-\newref Surname1 X.  (2000a)  The title of the article in Artificial Satellites, \textit{Artificial Satellites, Journal of Planetary Geodesy}, Vol. 40, No. 6, 23-41.
+\begin{lstlisting}[language=R, caption=R code for NDVI computation and mapping,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:02}]
+library(terra)
+library(RColorBrewer)
+library(Hmisc)
+setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/NDVI")
+filenames <- paste0('LC08_L2SP_197050_20151116_20200908_02_T1_SR_B',
+	1:7, ".tif")
+filenames
+landsat <- rast(filenames)
+landsat
+ndvi <- vi(landsat, 5, 4)
+options(scipen=10000)
+plot(ndvi, col=brewer.pal(11, "RdYlGn"), font.main = 1, 
+	main = "NDVI for Landsat-8 OLI/TIRS C1 
+image LC08_L2SP_197050_20151116_20200908_02_T1_SR: 
+	Inner Niger Delta, Mali (2015)", 
+cex.main=0.9) minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+hist(ndvi, font.main = 1, main = "NDVI values for Landsat-8 OLI/TIRS C1 
+	image  \nLC08_L2SP_197050_20151116_20200908_02_T1_SR: 
+	Inner Niger Delta, Mali (2015)", 
+xlab = "NDVI", ylab= "Frequency", col = "darkolivegreen1", 
+	xlim = c(-0.5, 1), breaks = 30, xaxt = "n") axis(side=1, 
+	at = seq(-0.6, 1, 0.1), labels = seq(-0.6, 1, 0.1))
+minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+\end{lstlisting}
 
-\newref Surname1 X.  (2000b)  The title of the article in Artificial Satellites, \textit{Artificial Satellites, Journal of Planetary Geodesy}, Vol. 40, No. 6, 43-49.
+\subsection*{R code for SAVI computation and mapping}
 
-\newref Surname3. Z., Surname4 A. (2002)  The title of the book,  \textit{Springer Verlag}, New York, Paris, London.
+\begin{lstlisting}[language=R, caption=R code used for SAVI computation and mapping,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:03}]
+library(terra)
+library(RColorBrewer)
+library(Hmisc)
+setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/SAVI")
+filenames <- paste0('LC08_L2SP_197050_20211116_20211125_02_T1_SR_B', 1:7, 
+	".tif")
+filenames
+landsat <- rast(filenames)
+landsat
+options(scipen=10000)
+plot(savi, col = rev(brewer.pal(11, "Spectral")), font.main = 1, 
+main = "SAVI for Landsat-8 OLI/TIRS C1 image 
+LC08_L2SP_197050_20211116_20211125_02_T1_SR: 
+Inner Niger Delta, Mali (2021)", cex.main=0.9)
+minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+hist(savi, font.main = 1, main = "SAVI values for Landsat-8 OLI/TIRS C1 
+	image \nLC08_L2SP_197050_20211116_20211125_02_T1_SR: 
+Inner Niger Delta, Mali (2021)", xlab = "NDVI", ylab= "Frequency",
+    col = "chocolate1", xlim = c(-0.5, 1),  breaks = 30, xaxt = "n")
+axis(side=1, at = seq(-0.6, 1, 0.1), labels = seq(-0.6, 1, 0.1))
+minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+\end{lstlisting}
 
-\newref Surname3 Z., Surname4, A. Surname5 B. (2003) This is the title of the paper in the Proceedings, \textit{Proc. Journées Systèmes de Référence Spatio-Temporels 2002}, eds. Surname6 X, Surname2 Y., Warsaw 2003, 25-28.
+\subsection*{R code for computing Enhanced Vegetation Index 2 (EVI2)}
+
+\begin{lstlisting}[language=R,caption=R code used for computing Enhanced Vegetation Index 2 (EVI2), basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:04}]
+library(terra)
+library(RColorBrewer)
+library(Hmisc)
+library(pals)
+setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/EVI")
+filenames <- paste0('LC08_L2SP_197050_20211116_20211125_02_T1_SR_B', 
+	1:7, ".tif")
+filenames
+landsat <- rast(filenames)
+landsat
+colors <- jet(100)
+options(scipen=10000)
+plot(evi2, col = colors, font.main = 2, main = "Enhanced Vegetation Index 2 
+	(EVI2) for Landsat-8 OLI/TIRS C1 image 
+	LC08_L2SP_197050_20211116_20211125_02_T1: Inner Niger Delta, Mali 
+	(2021)", cex.main=0.9)
+minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+hist(evi2, font.main = 1, main = "EVI2 values for Landsat-9 OLI/TIRS C1 
+	image \n LC08_L2SP_197050_20211116_20211125_02_T1, Inner 
+	Niger Delta, Mali (2021)", xlab = "SAVI", ylab= "Frequency",
+    col = "cyan1", xlim = c(-0.4, 0.4),  breaks = 30, xaxt = "n")
+axis(side=1, at = seq(-0.4, 0.4, 0.1), labels = seq(-0.4, 0.4, 0.1))
+minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+\end{lstlisting}
+
+\subsection*{R code for unsupervised classification by k-means clustering}
+
+\begin{lstlisting}[language=R,caption=R code used for unsupervised classification by k-means clustering, basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:05}]
+library(rgdal)
+library(raster)
+library(terra)
+library(RColorBrewer)
+library(pals)
+library(colorspace)
+library(RStoolbox)
+library(graphics)
+setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/K-means")
+Landsat_2013 <- list.files("/Users/polinalemenkova/Documents/R/
+	52_Image_Processing/K-means")
+list.files()
+landsat <- rast(Landsat_2013)
+landsat
+landsatRGB <- landsat[[c(4,3,2)]]
+plotRGB(landsatRGB, r=1, g=2, b=3, axes=FALSE, stretch="lin")
+set.seed(25)
+unC <- unsuperClass(landsatRGB, nSamples = 100, nClasses = 20, nStarts = 5)
+unC
+colors <- jet(20)
+plot(unC$map, main = "K-means Clustering for Landsat-8 OLI/TIRS C1 image of 
+	Mali, Inner Niger Delta \nLC08_L2SP_197050_20131110_20200912_02_T1 
+	(2013)", font.main=1, cex.main = 0.85, col = colors, axes = FALSE, 
+	box = FALSE, legend = FALSE)
+legend(x = "bottomright", legend=c("1", "2", "3", "4", "5", "6", "7", "8", 
+	"9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"), 
+	fill = colors, title = "LULC ID Classes", horiz = FALSE,  
+	bty = "n", text.font=1, ncol=1, y.intersp = 0.7)
+\end{lstlisting}
+
+\subsection*{Python code used for data inspection by correlation analysis}
+
+\begin{lstlisting}[language=python,caption=Python code used for data inspection by correlation analysis, basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:06}]
+#!/usr/bin/env python
+# coding: utf-8
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pylab as pylab
+from matplotlib import pyplot as plt
+import seaborn as sb
+os.chdir('/Users/polinalemenkova/Documents/Python/Scripts')
+sb.set(style='white')
+sb.set_context('paper')
+params = {'figure.figsize': (10, 10), 'legend.fontsize': 14,
+        'font.family': 'Times'
+        }
+pylab.rcParams.update(params)
+df = pd.read_csv("Table_stat.csv")
+corr = df.corr(method='pearson')
+cmap="RdBu"
+f, ax = plt.subplots()
+sb.heatmap(corr, cmap=cmap, center=0, vmin=-1.1, vmax=1.1,
+           annot=True, annot_kws={"size":8},
+           square=True, linewidths=.05, linecolor='grey',
+           cbar=True, mask=False, cbar_kws={"shrink": .5},
+           )
+plt.title('Pearson correlation for land cover types in Inner Niger 
+	  Delta, Mali', fontsize=13, fontfamily='serif')
+plt.subplots_adjust(bottom=0.15,top=0.85, right=0.90, left=0.10)
+plt.xticks(rotation=30)
+plt.yticks()
+plt.tight_layout()
+plt.savefig('plot_CorrK.png', dpi=300)
+plt.show()
+\end{lstlisting}
+
+{\bf Acknowledgements.} The authors thank the reviewers for reading, commenting and careful review of this paper which improved the initial version of the manuscript. 
+
+%\newsection {REFERENCES}
+%\bibliographystyle{apalike}
+%\bibliographystyle{plain}
+%\bibliographystyle{plainnat}
+\bibliography{Mauritania.bib}
+\nocite{*}
 
 % -----------------------------------------------------------------------------------------------
 % end of the AUTHOR section
