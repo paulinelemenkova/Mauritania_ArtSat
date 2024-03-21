@@ -1,0 +1,224 @@
+\documentclass[12pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[none]{hyphenat}
+\usepackage{setspace}
+\usepackage[protrusion=false,letterspace=75]{microtype}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\setlength\parindent{0pt}
+
+\usepackage{cite}
+\usepackage{url}
+\usepackage{hyperref}
+
+\usepackage{array}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{2pt}}m{#1}}
+
+\usepackage{tabularx}
+
+% ===============================================================================================
+% start of the EDITOR section
+% ===============================================================================================
+
+% definitions
+
+\def \newsection{\vspace{12pt}\textbf}
+\def \newsubsection{\vspace{12pt}\textbf}
+\def \newsubsubsection{\vspace{12pt}\textit}
+\def \newpar{\vspace{6pt}}
+\def \newref{\vspace{6pt}}
+\def \figtab{\small}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+% first page header and dates information
+
+\newcommand{\YEAR}{0}
+\newcommand{\VOLUME}{0}
+\newcommand{\NUMBER}{0}
+\newcommand{\DOI}{10.2478/arsa-0000-0000}
+%\setcounter{page}{1} 
+
+% header
+
+\usepackage{fancyhdr}
+\lhead
+{
+	\begin{picture}(0,0)
+	\put(0,-18){\includegraphics[width=2.7cm]{sciendo.png}}  
+	\put(100,-6){\textbf{ARTIFICIAL SATELLITES, Vol. \VOLUME, No. \NUMBER ~-- \YEAR}}
+	\put(100,-22){\textbf{DOI: \DOI}}
+	\end{picture}
+}
+
+% footer
+
+\lfoot
+{
+	\begin{picture}(0,0)
+	\put(0,0){\includegraphics[width=2cm]{cr.png}}  
+	\put(70,16){\tiny $\copyright$ 
+	{\tiny The Author(s). This is an open-access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0,}}
+	\put(70,8){\tiny {\href{https://creativecommons.org/licenses/by/4.0/}{https://creativecommons.org/licenses/by/4.0/}), which permits use, distribution, and reproduction in any medium, provided that the}}
+	\put(70,0){\tiny Article is properly cited.}
+	\end{picture}}
+\cfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% -----------------------------------------------------------------------------------------------
+% end of the EDITOR section
+% -----------------------------------------------------------------------------------------------
+
+
+\begin{document}
+\sloppy
+\thispagestyle{fancy}
+
+\vspace*{38pt}
+
+% ===============================================================================================
+% start of the AUTHOR section
+% ===============================================================================================
+
+% title 
+
+\begin{center}{\large\bf\uppercase{
+Title of the paper presented below\\
+as a template of the contribution}}
+\end{center}
+
+\vspace*{4pt}
+
+% author(s)
+
+\begin{center}
+\textls{
+Name1 \uppercase{Surname1}$^1$, Name2 \uppercase{Surname2}$^2$, Name3 \uppercase{Surname3}$^1$ \\
+
+\vspace{6pt}
+
+$^1$Affiliation1, City1, Country1 \\
+$^2$Affiliation2, City2, Country2 \\
+
+\vspace{6pt}
+
+e-mails: xxx@xx.xx, yyy@yy.yy, zzz@zz.zz\\
+}
+\end{center}
+
+\vspace{30pt}
+
+% abstract and keywords
+
+{\bf ABSTRACT.} The abstract should contain no more than 250 words. The abstract should state briefly the purpose of the research, the principal results and major conclusions. An abstract is often presented separate from the paper, so it must be able to stand alone. References should therefore be avoided, but if essential, they must be cited in full, without reference to the reference list. Non-standard or uncommon abbreviations should be avoided, but if essential they must be defined at their first mention in the abstract itself.
+
+\newpar {\bf Keywords:} Immediately after the abstract, provide a maximum of 5 keywords, avoiding plural terms, multiple concepts as well as "and", "of".
+
+% article content
+
+\newsection {1. INTRODUCTION}
+
+\newpar Provide the objectives of the work and an adequate background, avoiding a detailed literature survey or a summary of the results. The first paragraph should be written with no ident. All cited papers, i.e. (Surname1, 2000a), (Surname1, 2000b), (Surname3 and Surname4, 2002), and  Surname3 et al. (2003) should appear in alphabetic order, by the surname of the first author. Please ensure that every reference cited in the text is also present in the reference list. 
+
+\newpar The second paragraph as well as the next ones should have no ident. Subsequent paragraphs should be separated by a vertical space of 6 pt. The font used in the text is Times New Roman, size 12 pt., with leading equal to 1 pt. Headline parameters for sections: bold, uppercase letters, 12 pt.; for subsections: bold, 12 pt., for subsubsections: italics, 12 pt. In each level the heading is separated by a break 12 pt. before and 6 pt. after.
+
+\newsection {2. NEXT SECTION}
+
+\newpar The first paragraph should be written with no ident. Please write your text in good English (American or British usage is accepted, but not a mixture of them), do not use hyphenation. Figures and tables should follow caption. The captions of the figures should follow the figures and the titles of the tables should come before the tables. Figure 1 presents the cover of the Artificial Satellites, Journal of Planetary Geodesy. The figure and table captions should be in font 11 pt. with the word "Figure"/"Table" and the number in bold.
+
+% sample figure
+
+\begin{center}
+\includegraphics[height=5.0cm]{Artsat_cover.jpg}
+
+\vspace{6pt}	
+\figtab {\bf Figure 1.} The cover of the  Artificial Satellites, Journal of Planetary Geodesy
+\end{center}
+
+\newpar The second paragraph as well as the next ones should have no ident. Table 1 presents the number of the issues of the Artificial Satellites, Journal of Planetary Geodesy, edited in the years 2001-2004. If part of the table is on the next page, it is necessary to repeat the header row.
+
+% sample table
+
+\begin{center}
+\figtab {\bf Table 1.} The  number of the issues of the Artificial Satellites edited in the years 2001-2004
+\begin{center}
+  \begin{tabular}[5pt]{|C{2.0cm}|C{4.0cm}|}
+    \hline
+    \bf{Year} & \bf{Number of issues} \\ \hline
+    2001 & 4 \\ \hline
+    2002 & 4 \\ \hline
+    2003 & 4 \\ \hline
+    2004 & 4 \\
+    \hline
+  \end{tabular}
+\end{center}
+\end{center}
+
+\newsection {3. SECTION WITH SUBSECTIONS}
+
+\newpar In the case of a well-developed article structure, subsections should be used to preserve readability.
+
+\newsubsection {3.1. First subsection}
+
+\newpar Multilevel numbering should precede the title of each subsequent subsection.
+
+\newpar Equations should be placed within the text (1). They should be centered and numbered successively with Arabic numerals (minor non-referenced expressions might be not numbered). The equation’s number should be positioned in parentheses right justified at the line of the equation:
+
+% sample equation
+
+\begin{equation}
+   \label{simple_equation}
+   \alpha = \sqrt{ \beta }
+\end{equation}
+
+where: \\
+\tab[1cm]$\alpha$	\tab[0.5cm]~--	\tab[0.5cm]first variable description; \\
+\tab[1cm]$\beta$	\tab[0.5cm]~--	\tab[0.5cm]second variable description.
+
+\newsubsection {3.2. Second subsection}
+
+\newpar If you use the \LaTeX template, you should start sections, subsections and subsubsections with the appropriate command, defined on the beginning of the file. Each subsequent paragraph should begin with the \textit{"newpar"} command. Similarly, for references use \textit{"newref"}, while for figure and table captions - \textit{"figtab"}.
+
+\pagebreak % if necessary, use the command to break the page
+
+\newsubsubsection {3.2.1. First subsubsection}
+
+\newpar If the next level is necessary – the next level can be used. 
+
+\newsubsubsection {3.2.2. Second subsubsection}
+
+\newpar Consistently use multi-level numbering. 
+
+\newsection {3. CONCLUSIONS}
+
+\newpar Each contribution submitted to publication in our Journal should have original conclusions and, like in the introduction, the first paragraph should be written with no ident.
+
+\vspace{12pt}
+
+% acknowledgments - optional
+
+{\bf Acknowledgements.} Acknowledgements are optional. Place acknowledgements in a separate section at the end of the article and do not, therefore, include them on the title page, as a footnote to the title or otherwise.
+
+% references
+
+\newsection {REFERENCES}
+
+\newref Surname1 X.  (2000a)  The title of the article in Artificial Satellites, \textit{Artificial Satellites, Journal of Planetary Geodesy}, Vol. 40, No. 6, 23-41.
+
+\newref Surname1 X.  (2000b)  The title of the article in Artificial Satellites, \textit{Artificial Satellites, Journal of Planetary Geodesy}, Vol. 40, No. 6, 43-49.
+
+\newref Surname3. Z., Surname4 A. (2002)  The title of the book,  \textit{Springer Verlag}, New York, Paris, London.
+
+\newref Surname3 Z., Surname4, A. Surname5 B. (2003) This is the title of the paper in the Proceedings, \textit{Proc. Journées Systèmes de Référence Spatio-Temporels 2002}, eds. Surname6 X, Surname2 Y., Warsaw 2003, 25-28.
+
+% -----------------------------------------------------------------------------------------------
+% end of the AUTHOR section
+% -----------------------------------------------------------------------------------------------
+
+\end{document}
