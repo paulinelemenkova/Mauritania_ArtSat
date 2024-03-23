@@ -80,6 +80,7 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{2pt}}m{#1}}
 
 \usepackage{tabularx}
+	\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \usepackage{caption} 
 \captionsetup[table]{skip=10pt}
 \usepackage{booktabs}
@@ -282,10 +283,10 @@ e-mails: polina.lemenkova@plus.ac.at \\
 			Min-max discriminant analysis & - \\
 			Random Forest Classifier & 9 minutes  \\
 			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
-			Extra Trees Classifier & -  \\
-			Gradient Boosting Classifier & -  \\
+			Gradient Boosting Classifier & 23 minutes  \\
+			Support Vector Machine Classifier & 50 minutes  \\
 			\bottomrule
-		\end{tabularx}
+\end{tabularx}
 	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
 \end{table}
 
@@ -453,51 +454,51 @@ e-mails: polina.lemenkova@plus.ac.at \\
 \vspace*{20pt}\caption{Decision Tree Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig08}
 \end{figure}
 
-\subsection*{Extra Trees Classifier}
-
-\begin{figure}[H]
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-			\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2014}
-	\end{subfigure}%
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-		\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2017}
-	\end{subfigure}%
-\\
-\vfill \vspace{1mm}
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-			\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2018}
-	\end{subfigure}%
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-		\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2020}
-	\end{subfigure}%
-\\
-\vfill \vspace{1mm}
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-			\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2022}
-	\end{subfigure}%
-	\begin{subfigure}[b]{.5\textwidth}
-		\centering
-		\includegraphics[width=0.90\textwidth]{Fig_00}
-		\caption{2023}
-	\end{subfigure}%
-\vspace*{20pt}\caption{Extra Trees Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig09}
-\end{figure}
-
 \subsection*{Gradient Boosting Classifier}
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
 		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_09a}
+		\caption{2014}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.91\textwidth]{Fig_09b}
+		\caption{2017}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_09c}
+		\caption{2018}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.91\textwidth]{Fig_09d}
+		\caption{2020}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_09e}
+		\caption{2022}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.91\textwidth]{Fig_09f}
+		\caption{2023}
+	\end{subfigure}%
+\vspace*{20pt}\caption{Gradient Boosting Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig09}
+\end{figure}
+
+\subsection*{Support Vector Machine (SVM) Classifier}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
 			\includegraphics[width=0.90\textwidth]{Fig_00}
 		\caption{2014}
 	\end{subfigure}%
@@ -530,7 +531,7 @@ e-mails: polina.lemenkova@plus.ac.at \\
 		\includegraphics[width=0.90\textwidth]{Fig_00}
 		\caption{2023}
 	\end{subfigure}%
-\vspace*{20pt}\caption{Gradient Boosting Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig10}
+\vspace*{20pt}\caption{Support Vector Machine (SVM) Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig10}
 \end{figure}
 
 \newsection {4. CONCLUSIONS}
@@ -564,210 +565,150 @@ WGS & World Geodetic System \\
 \newsection {APPENDIX}
 \vspace{12pt}
 
-\subsection*{GMT cartographic scripts}
+\subsection*{GRASS GIS scripts for RS data processing}
 
-\begin{lstlisting}[language=bash, caption=GMT code for cartographic data visualization,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=GRASS GIS script for data import and preprocessing,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:01}]
-gmt grdcut ETOPO1_Ice_g_gmt4.grd -R-13/5/9.5/25.5 -Gml1_relief.nc
-gmt grdcut GEBCO_2019.nc -R-13/5/9.5/25.5 -Gml_relief.nc
-gdalinfo -stats ml1_relief.nc
-gmt makecpt -Csrtm -V -T27/1590 > pauline.cpt
-gmt pscoast -R-13/5/9.5/25.5 -JD-4/18/9.5/25.5/6.5i -Dh -M -EML > Mali.txt
-ps=Topo_ML.ps
-gmt grdimage ml_relief.nc -Cpauline.cpt -R-13/5/9.5/25.5 \
-	-JD-4/18/9.5/25.5/6.5i -I+a15+ne0.75 -t40 -Xc -P -K > $ps
-gmt grdcontour ml1_relief.nc -R -J -C1000 -A1000+f7p,26,darkbrown \
-	-Wthinner,darkbrown -O -K >> $ps
-gmt pscoast -R -J -Ia/thin,blue -Na -N1/thick,tomato -W0.1p -Df -O -K >> $ps
-gmt psclip -R-13/5/9.5/25.5 -JD-4/18/9.5/25.5/6.5i Mali.txt -O -K >> $ps
-gmt grdimage ml_relief.nc -Cpauline.cpt -R-13/5/9.5/25.5 \
-	-JD-4/18/9.5/25.5/6.5i -I+a15+ne0.75 -Xc -P -O -K >> $ps
-gmt grdcontour ml1_relief.nc -R -J -C500 -Wthinnest,darkbrown -O -K >> $ps
-gmt pscoast -R -J -Ia/thin,blue -Na -N1/thick,tomato -W0.1p -Df -O -K >> $ps
-gmt psclip -C -O -K >> $ps   
-gmt psscale -Dg-13.3/8.1+w16.5c/0.15i+h+o0.3/0i+ml+e -R -J -Cpauline.cpt \
-    -Bg50f10a100+l"Colormap: 'earth' Colors for global topography relief \
-    	[R=-T29/896, H, C=RGB]" -I0.2 -By+lm -O -K >> $ps
-gmt psbasemap -R -J  -Bpxg4f1a2 -Bpyg4f2a2 -Bsxg2 -Bsyg2 \
-	-B+t"Topographic map of Mali" -O -K >> $ps
-gmt psbasemap -R -J -Lx14.0c/-2.4c+c10+w500k+l"Equidistant conic \ 
-	projection. Scale (km)"+f -UBL/0p/-70p -O -K >> $ps
-gmt pstext -R -J -N -O -K -F+f11p,21,lemonchiffon+jLB >> $ps << EOF
--5.67 12.50 Koutiala
-EOF
-gmt psxy -R -J -Sc -W0.5p -Gyellow -O -K << EOF >> $ps
--5.47 12.38 0.20c
-EOF
-# ditto for all the cities and objects with adjusted coordinates
-gmt psbasemap -R -J -O -K -DjTL+w3.5c+o-0.2c/-0.2c+stmp >> $ps
-read x0 y0 w h < tmp
-gmt pscoast --MAP_GRID_PEN_PRIMARY=thin,grey -Rg -JG-1.0/8.0N/$w -Da \
-	-Glightgoldenrod1 -A5000 -Bga -Wfaint -EML+gred -Sdodgerblue \
-	-O -K -X$x0 -Y$y0 >> $ps
-gmt psxy -R -J -O -K -T  -X-${x0} -Y-${y0} >> $ps
-gmt logo -Dx7.0/-3.1+o0.1i/0.1i+w2c -O -K >> $ps
-gmt pstext -R0/10/0/15 -JX10/10 -X0.5c -Y8.7c -N -O \
-    -F+f10p,0,black+jLB >> $ps << EOF
-2.5 10.4 Digital elevation data: SRTM/GEBCO, 15 arc sec resolution grid
-EOF
-gmt psconvert Topo_ML.ps -A0.5c -E720 -Tj -Z
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B1.TIF output=L_2023_01 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B2.TIF output=L_2023_02 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B3.TIF output=L_2023_03 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B4.TIF output=L_2023_04 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B5.TIF output=L_2023_05 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B6.TIF output=L_2023_06 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B7.TIF output=L_2023_07 extent=region resolution=region
+# check up the raster files
+g.list rast
+# adding shaded relief
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/gebco_2023.tif output=shaded_relief extent=region --overwrite
+r.contour shaded_relief out=isolines step=200 --overwrite
 \end{lstlisting}
 
-\subsection*{R code for NDVI computation and mapping}
-
-\begin{lstlisting}[language=R, caption=R code for NDVI computation and mapping,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=GRASS GIS script for image clustering and classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:02}]
-library(terra)
-library(RColorBrewer)
-library(Hmisc)
-setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/NDVI")
-filenames <- paste0('LC08_L2SP_197050_20151116_20200908_02_T1_SR_B',
-	1:7, ".tif")
-filenames
-landsat <- rast(filenames)
-landsat
-ndvi <- vi(landsat, 5, 4)
-options(scipen=10000)
-plot(ndvi, col=brewer.pal(11, "RdYlGn"), font.main = 1, 
-	main = "NDVI for Landsat-8 OLI/TIRS C1 
-image LC08_L2SP_197050_20151116_20200908_02_T1_SR: 
-	Inner Niger Delta, Mali (2015)", 
-cex.main=0.9) minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
-hist(ndvi, font.main = 1, main = "NDVI values for Landsat-8 OLI/TIRS C1 
-	image  \nLC08_L2SP_197050_20151116_20200908_02_T1_SR: 
-	Inner Niger Delta, Mali (2015)", 
-xlab = "NDVI", ylab= "Frequency", col = "darkolivegreen1", 
-	xlim = c(-0.5, 1), breaks = 30, xaxt = "n") axis(side=1, 
-	at = seq(-0.6, 1, 0.1), labels = seq(-0.6, 1, 0.1))
-minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+# Setting computational region to match the scene
+g.region raster=L_2023_01 -p
+# grouping data by i.group
+i.group group=L_2023 subgroup=res_30m \
+  input=L_2023_01,L_2023_02,L_2023_03,L_2023_04,L_2023_05,L_2023_06,L_2023_07 --overwrite
+# Clustering: generating signature file and report using k-means clustering algorithm
+i.cluster group=L_2023 subgroup=res_30m \
+  signaturefile=cluster_L_2023 \
+  classes=10 reportfile=rep_clust_L_2023.txt --overwrite
+# Classification by i.maxlik module
+i.maxlik group=L_2023 subgroup=res_30m \
+  signaturefile=cluster_L_2023 \
+  output=L_2023_clusters reject=L_2023_cluster_reject --overwrite
+r.colors L_2023_clusters color=viridis
+r.colors shaded_relief color=grey -n
+# Mapping
+g.region raster=L_2023_01 -p
+d.mon wx0
+d.rast shaded_relief
+d.rast L_2023_clusters
+d.vect isolines color='100:93:134' width=0
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=L_2023_clusters title="Clusters 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=Mauritania_2023 format=jpg --overwrite
+# Mapping rejection probability
+d.mon wx2
+g.region raster=L_2023_clusters -p
+r.colors L_2023_cluster_reject color=rainbow -e
+d.rast shaded_relief
+d.rast L_2023_cluster_reject
+d.vect isolines color='100:93:134' width=0
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=L_2023_cluster_reject title="2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 \end{lstlisting}
 
-\subsection*{R code for SAVI computation and mapping}
+\subsection*{Random Forest Classifier: GRASS GIS scripts for ML-based image processing}
 
-\begin{lstlisting}[language=R, caption=R code used for SAVI computation and mapping,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Random Forest Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:03}]
-library(terra)
-library(RColorBrewer)
-library(Hmisc)
-setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/SAVI")
-filenames <- paste0('LC08_L2SP_197050_20211116_20211125_02_T1_SR_B', 1:7, 
-	".tif")
-filenames
-landsat <- rast(filenames)
-landsat
-options(scipen=10000)
-plot(savi, col = rev(brewer.pal(11, "Spectral")), font.main = 1, 
-main = "SAVI for Landsat-8 OLI/TIRS C1 image 
-LC08_L2SP_197050_20211116_20211125_02_T1_SR: 
-Inner Niger Delta, Mali (2021)", cex.main=0.9)
-minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
-hist(savi, font.main = 1, main = "SAVI values for Landsat-8 OLI/TIRS C1 
-	image \nLC08_L2SP_197050_20211116_20211125_02_T1_SR: 
-Inner Niger Delta, Mali (2021)", xlab = "NDVI", ylab= "Frequency",
-    col = "chocolate1", xlim = c(-0.5, 1),  breaks = 30, xaxt = "n")
-axis(side=1, at = seq(-0.6, 1, 0.1), labels = seq(-0.6, 1, 0.1))
-minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+# Generating training pixels from an older land cover classification:
+r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels --overwrite
+# training a model using r.learn.train
+r.learn.train group=L_2023 training_map=training_pixels \
+    model_name=RandomForestClassifier n_estimators=500 save_model=rfc_model.gz --overwrite
+# perform prediction using r.learn.predict
+r.learn.predict group=L_2023 load_model=rfc_model.gz output=rfc_classification_2023 --overwrite
+# check raster categories - they are automatically applied to the classification output
+r.category rfc_classification_2023
+# display the results
+r.colors rfc_classification_2023 color=roygbiv -e
+d.mon wx0
+d.rast shaded_relief
+d.vect isolines color='100:93:134' width=0
+d.rast rfc_classification_2023
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=rfc_classification_2023 title="RFC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=RFC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\subsection*{R code for computing Enhanced Vegetation Index 2 (EVI2)}
-
-\begin{lstlisting}[language=R,caption=R code used for computing Enhanced Vegetation Index 2 (EVI2), basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Decision Tree Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:04}]
-library(terra)
-library(RColorBrewer)
-library(Hmisc)
-library(pals)
-setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/EVI")
-filenames <- paste0('LC08_L2SP_197050_20211116_20211125_02_T1_SR_B', 
-	1:7, ".tif")
-filenames
-landsat <- rast(filenames)
-landsat
-colors <- jet(100)
-options(scipen=10000)
-plot(evi2, col = colors, font.main = 2, main = "Enhanced Vegetation Index 2 
-	(EVI2) for Landsat-8 OLI/TIRS C1 image 
-	LC08_L2SP_197050_20211116_20211125_02_T1: Inner Niger Delta, Mali 
-	(2021)", cex.main=0.9)
-minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
-hist(evi2, font.main = 1, main = "EVI2 values for Landsat-9 OLI/TIRS C1 
-	image \n LC08_L2SP_197050_20211116_20211125_02_T1, Inner 
-	Niger Delta, Mali (2021)", xlab = "SAVI", ylab= "Frequency",
-    col = "cyan1", xlim = c(-0.4, 0.4),  breaks = 30, xaxt = "n")
-axis(side=1, at = seq(-0.4, 0.4, 0.1), labels = seq(-0.4, 0.4, 0.1))
-minor.tick(nx = 10, ny = 10, tick.ratio = 0.3)
+# training a model using r.learn.train
+r.learn.train group=L_2023 training_map=training_pixels \
+    model_name=DecisionTreeClassifier n_estimators=500 save_model=dtc_model.gz --overwrite
+# perform prediction using r.learn.predict
+r.learn.predict group=L_2023 load_model=dtc_model.gz output=dtc_classification_2023 --overwrite
+# check raster categories automatically applied to the classification output
+r.category dtc_classification_2023
+# display
+r.colors dtc_classification_2023 color=bcyr
+d.mon wx0
+d.rast shaded_relief
+d.vect isolines color='100:93:134' width=0
+d.rast dtc_classification_2023
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=dtc_classification_2023 title="DTC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=DTC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\subsection*{R code for unsupervised classification by k-means clustering}
-
-\begin{lstlisting}[language=R,caption=R code used for unsupervised classification by k-means clustering, basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:05}]
-library(rgdal)
-library(raster)
-library(terra)
-library(RColorBrewer)
-library(pals)
-library(colorspace)
-library(RStoolbox)
-library(graphics)
-setwd("/Users/polinalemenkova/Documents/R/52_Image_Processing/K-means")
-Landsat_2013 <- list.files("/Users/polinalemenkova/Documents/R/
-	52_Image_Processing/K-means")
-list.files()
-landsat <- rast(Landsat_2013)
-landsat
-landsatRGB <- landsat[[c(4,3,2)]]
-plotRGB(landsatRGB, r=1, g=2, b=3, axes=FALSE, stretch="lin")
-set.seed(25)
-unC <- unsuperClass(landsatRGB, nSamples = 100, nClasses = 20, nStarts = 5)
-unC
-colors <- jet(20)
-plot(unC$map, main = "K-means Clustering for Landsat-8 OLI/TIRS C1 image of 
-	Mali, Inner Niger Delta \nLC08_L2SP_197050_20131110_20200912_02_T1 
-	(2013)", font.main=1, cex.main = 0.85, col = colors, axes = FALSE, 
-	box = FALSE, legend = FALSE)
-legend(x = "bottomright", legend=c("1", "2", "3", "4", "5", "6", "7", "8", 
-	"9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"), 
-	fill = colors, title = "LULC ID Classes", horiz = FALSE,  
-	bty = "n", text.font=1, ncol=1, y.intersp = 0.7)
+# training a model using r.learn.train
+r.learn.train group=L_2023 training_map=training_pixels \
+    model_name=GradientBoostingClassifier n_estimators=500 save_model=gbc_model.gz --overwrite
+# perform prediction using r.learn.predict
+r.learn.predict group=L_2023 load_model=gbc_model.gz output=gbc_classification_2023 --overwrite
+# check raster categories automatically applied to the classification output
+r.category gbc_classification_2023
+# display
+r.colors gbc_classification_2023 color=bgyr
+d.mon wx0
+d.rast shaded_relief
+d.vect isolines color='100:93:134' width=0
+d.rast gbc_classification_2023
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=gbc_classification_2023 title="GBC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=GBC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\subsection*{Python code used for data inspection by correlation analysis}
-
-\begin{lstlisting}[language=python,caption=Python code used for data inspection by correlation analysis, basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:06}]
-#!/usr/bin/env python
-# coding: utf-8
-import os
-import numpy as np
-import pandas as pd
-import matplotlib.pylab as pylab
-from matplotlib import pyplot as plt
-import seaborn as sb
-os.chdir('/Users/polinalemenkova/Documents/Python/Scripts')
-sb.set(style='white')
-sb.set_context('paper')
-params = {'figure.figsize': (10, 10), 'legend.fontsize': 14,
-        'font.family': 'Times'
-        }
-pylab.rcParams.update(params)
-df = pd.read_csv("Table_stat.csv")
-corr = df.corr(method='pearson')
-cmap="RdBu"
-f, ax = plt.subplots()
-sb.heatmap(corr, cmap=cmap, center=0, vmin=-1.1, vmax=1.1,
-           annot=True, annot_kws={"size":8},
-           square=True, linewidths=.05, linecolor='grey',
-           cbar=True, mask=False, cbar_kws={"shrink": .5},
-           )
-plt.title('Pearson correlation for land cover types in Inner Niger 
-	  Delta, Mali', fontsize=13, fontfamily='serif')
-plt.subplots_adjust(bottom=0.15,top=0.85, right=0.90, left=0.10)
-plt.xticks(rotation=30)
-plt.yticks()
-plt.tight_layout()
-plt.savefig('plot_CorrK.png', dpi=300)
-plt.show()
+# training a model using r.learn.train
+r.learn.train group=L_2023 training_map=training_pixels \
+    model_name=SVC n_estimators=500 save_model=svc_model.gz --overwrite
+# perform prediction using r.learn.predict
+r.learn.predict group=L_2023 load_model=svc_model.gz output=svc_classification_2014 --overwrite
+# check raster categories - they are automatically applied to the classification output
+r.category svc_classification_2023
+# display the results
+r.colors svc_classification_2023 color=roygbiv -e
+d.mon wx2
+d.rast shaded_relief
+d.vect isolines color='100:93:134' width=0
+d.rast svc_classification_2023
+d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
+d.legend raster=svc_classification_2023 title="SVM 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.out.file output=svc_2023 format=jpg --overwrite
 \end{lstlisting}
 
 {\bf Acknowledgements.} Funding from the University of Salzburg, Faculty of Digital and Analytical Sciences, Department of Geoinformatics, award GZ: P29085/L-2O23 is gratefully acknowledged. 
