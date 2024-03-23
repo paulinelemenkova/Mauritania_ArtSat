@@ -270,9 +270,28 @@ e-mails: polina.lemenkova@plus.ac.at \\
 \vspace*{20pt}\caption{Landsat 8-9 satellite images covering salt pan Sebkha de Ndrhamcha in western Mauritania in natural colours showing floodplain for six years (always November): (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023.}\label{fig04}
 \end{figure}
 
+
+\begin{table}[H]
+\small
+\caption{Metadata of the satellite images used in this study: Landsat-8 OLI/TIRS USGS \textsuperscript{1}.\label{tab1}}
+\begin{tabularx}{\textwidth}{cc}
+			\toprule
+			\textbf{Method} & \textbf{Processing Time} \\
+			\midrule
+			Clustering & - \\
+			Min-max discriminant analysis & - \\
+			Random Forest Classifier & 9 minutes  \\
+			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
+			Extra Trees Classifier & -  \\
+			Gradient Boosting Classifier & -  \\
+			\bottomrule
+		\end{tabularx}
+	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
+\end{table}
+
 \newsection {3. RESULTS AND DISCUSSION}
 
-\subsection*{Title}
+\subsection*{Clustering}
 
 \newpar The following 10 land cover classes were identified: 1) Water bodies; 2) Sebkha; 3) Urban areas; 4) Compact sand; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks.
 
@@ -350,6 +369,168 @@ e-mails: polina.lemenkova@plus.ac.at \\
 		\caption{2023}
 	\end{subfigure}%
 \vspace*{20pt}\caption{Maps of rejection threshold probability for accuracy analysis of image classification by: chi square test. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig06}
+\end{figure}
+
+%---------------------ML -------------->
+
+\subsection*{Random Forest Classifier}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_07a}
+		\caption{2014}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_07b}
+		\caption{2017}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_07c}
+		\caption{2018}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_07d}
+		\caption{2020}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_07e}
+		\caption{2022}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_07f}
+		\caption{2023}
+	\end{subfigure}%
+\vspace*{20pt}\caption{Random Forest Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig07}
+\end{figure}
+
+\subsection*{Decision Tree Classifier}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_08a}
+		\caption{2014}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_08b}
+		\caption{2017}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_08c}
+		\caption{2018}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_08d}
+		\caption{2020}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_08e}
+		\caption{2022}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_08f}
+		\caption{2023}
+	\end{subfigure}%
+\vspace*{20pt}\caption{Decision Tree Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig08}
+\end{figure}
+
+\subsection*{Extra Trees Classifier}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2014}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2017}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2018}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2020}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2022}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2023}
+	\end{subfigure}%
+\vspace*{20pt}\caption{Extra Trees Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig09}
+\end{figure}
+
+\subsection*{Gradient Boosting Classifier}
+
+\begin{figure}[H]
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2014}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2017}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2018}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2020}
+	\end{subfigure}%
+\\
+\vfill \vspace{1mm}
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+			\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2022}
+	\end{subfigure}%
+	\begin{subfigure}[b]{.5\textwidth}
+		\centering
+		\includegraphics[width=0.90\textwidth]{Fig_00}
+		\caption{2023}
+	\end{subfigure}%
+\vspace*{20pt}\caption{Gradient Boosting Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig10}
 \end{figure}
 
 \newsection {4. CONCLUSIONS}
