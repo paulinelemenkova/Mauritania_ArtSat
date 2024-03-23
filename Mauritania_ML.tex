@@ -643,9 +643,9 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 \
 d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 \end{lstlisting}
 
-\subsection*{Random Forest Classifier: GRASS GIS scripts for ML-based image processing}
+\subsection*{Machine Learning scripts of GRASS GIS for image processing}
 
-\begin{lstlisting}[language=bash, caption=Random Forest Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Random Forest Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:03}]
 # Generating training pixels from an older land cover classification:
 r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels
@@ -672,7 +672,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=RFC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Decision Tree Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Decision Tree Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:04}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
@@ -697,7 +697,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=DTC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:05}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
@@ -722,7 +722,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=GBC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:06}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
