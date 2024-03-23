@@ -284,7 +284,7 @@ e-mails: polina.lemenkova@plus.ac.at \\
 			Random Forest Classifier & 9 minutes  \\
 			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
 			Gradient Boosting Classifier & 23 minutes  \\
-			Support Vector Machine Classifier & 50 minutes  \\
+			Support Vector Machine Classifier & 47 minutes  \\
 			\bottomrule
 \end{tabularx}
 	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
@@ -569,17 +569,32 @@ WGS & World Geodetic System \\
 
 \begin{lstlisting}[language=bash, caption=GRASS GIS script for data import and preprocessing,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:01}]
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B1.TIF output=L_2023_01 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B2.TIF output=L_2023_02 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B3.TIF output=L_2023_03 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B4.TIF output=L_2023_04 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B5.TIF output=L_2023_05 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B6.TIF output=L_2023_06 extent=region resolution=region
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/LC09_L2SP_205047_20230428_20230430_02_T1_SR_B7.TIF output=L_2023_07 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/\
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B1.TIF 
+	output=L_2023_01 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B2.TIF 
+	output=L_2023_02 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B3.TIF 
+	output=L_2023_03 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B4.TIF 
+	output=L_2023_04 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B5.TIF 
+	output=L_2023_05 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B6.TIF 
+	output=L_2023_06 extent=region resolution=region
+r.import input=/Users/polinalemenkova/grassdata/Mauritania/
+	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B7.TIF 
+	output=L_2023_07 extent=region resolution=region
 # check up the raster files
 g.list rast
 # adding shaded relief
-r.import input=/Users/polinalemenkova/grassdata/Mauritania/gebco_2023.tif output=shaded_relief extent=region --overwrite
+r.import input=/Users/polinalemenkova/grassdata/
+	Mauritania/gebco_2023.tif output=shaded_relief extent=region --overwrite
 r.contour shaded_relief out=isolines step=200 --overwrite
 \end{lstlisting}
 
@@ -589,8 +604,9 @@ stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:02}]
 g.region raster=L_2023_01 -p
 # grouping data by i.group
 i.group group=L_2023 subgroup=res_30m \
-  input=L_2023_01,L_2023_02,L_2023_03,L_2023_04,L_2023_05,L_2023_06,L_2023_07 --overwrite
-# Clustering: generating signature file and report using k-means clustering algorithm
+  input=L_2023_01,L_2023_02,L_2023_03,L_2023_04,\
+  	L_2023_05,L_2023_06,L_2023_07 --overwrite
+# Generating signature file and report using k-means clustering algorithm
 i.cluster group=L_2023 subgroup=res_30m \
   signaturefile=cluster_L_2023 \
   classes=10 reportfile=rep_clust_L_2023.txt --overwrite
@@ -607,8 +623,10 @@ d.rast shaded_relief
 d.rast L_2023_clusters
 d.vect isolines color='100:93:134' width=0
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=L_2023_clusters title="Clusters 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=L_2023_clusters title="Clusters 2023" title_fontsize=19 \
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 \
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=Mauritania_2023 format=jpg --overwrite
 # Mapping rejection probability
 d.mon wx2
@@ -618,8 +636,10 @@ d.rast shaded_relief
 d.rast L_2023_cluster_reject
 d.vect isolines color='100:93:134' width=0
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=L_2023_cluster_reject title="2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=L_2023_cluster_reject title="2023" title_fontsize=19 \
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 \
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 \end{lstlisting}
 
@@ -628,13 +648,15 @@ d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 \begin{lstlisting}[language=bash, caption=Random Forest Classifier: GRASS GIS scripts for ML-based image processingn,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:03}]
 # Generating training pixels from an older land cover classification:
-r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels --overwrite
+r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
-    model_name=RandomForestClassifier n_estimators=500 save_model=rfc_model.gz --overwrite
+    model_name=RandomForestClassifier n_estimators=500 
+    save_model=rfc_model.gz --overwrite
 # perform prediction using r.learn.predict
-r.learn.predict group=L_2023 load_model=rfc_model.gz output=rfc_classification_2023 --overwrite
-# check raster categories - they are automatically applied to the classification output
+r.learn.predict group=L_2023 load_model=rfc_model.gz 
+output=rfc_classification_2023 --overwrite
+# check raster categories which are applied to the classification output
 r.category rfc_classification_2023
 # display the results
 r.colors rfc_classification_2023 color=roygbiv -e
@@ -643,8 +665,10 @@ d.rast shaded_relief
 d.vect isolines color='100:93:134' width=0
 d.rast rfc_classification_2023
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=rfc_classification_2023 title="RFC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=rfc_classification_2023 title="RFC 2023" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=RFC_2023 format=jpg --overwrite
 \end{lstlisting}
 
@@ -652,9 +676,11 @@ d.out.file output=RFC_2023 format=jpg --overwrite
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:04}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
-    model_name=DecisionTreeClassifier n_estimators=500 save_model=dtc_model.gz --overwrite
+    model_name=DecisionTreeClassifier n_estimators=500 
+    	save_model=dtc_model.gz --overwrite
 # perform prediction using r.learn.predict
-r.learn.predict group=L_2023 load_model=dtc_model.gz output=dtc_classification_2023 --overwrite
+r.learn.predict group=L_2023 load_model=dtc_model.gz 
+	output=dtc_classification_2023 --overwrite
 # check raster categories automatically applied to the classification output
 r.category dtc_classification_2023
 # display
@@ -664,8 +690,10 @@ d.rast shaded_relief
 d.vect isolines color='100:93:134' width=0
 d.rast dtc_classification_2023
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=dtc_classification_2023 title="DTC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=dtc_classification_2023 title="DTC 2023" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=DTC_2023 format=jpg --overwrite
 \end{lstlisting}
 
@@ -673,9 +701,11 @@ d.out.file output=DTC_2023 format=jpg --overwrite
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:05}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
-    model_name=GradientBoostingClassifier n_estimators=500 save_model=gbc_model.gz --overwrite
+    model_name=GradientBoostingClassifier n_estimators=500 
+    	save_model=gbc_model.gz --overwrite
 # perform prediction using r.learn.predict
-r.learn.predict group=L_2023 load_model=gbc_model.gz output=gbc_classification_2023 --overwrite
+r.learn.predict group=L_2023 load_model=gbc_model.gz 
+	output=gbc_classification_2023 --overwrite
 # check raster categories automatically applied to the classification output
 r.category gbc_classification_2023
 # display
@@ -685,8 +715,10 @@ d.rast shaded_relief
 d.vect isolines color='100:93:134' width=0
 d.rast gbc_classification_2023
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=gbc_classification_2023 title="GBC 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=gbc_classification_2023 title="GBC 2023" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=GBC_2023 format=jpg --overwrite
 \end{lstlisting}
 
@@ -696,8 +728,9 @@ stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:06}]
 r.learn.train group=L_2023 training_map=training_pixels \
     model_name=SVC n_estimators=500 save_model=svc_model.gz --overwrite
 # perform prediction using r.learn.predict
-r.learn.predict group=L_2023 load_model=svc_model.gz output=svc_classification_2014 --overwrite
-# check raster categories - they are automatically applied to the classification output
+r.learn.predict group=L_2023 load_model=svc_model.gz 
+	output=svc_classification_2014 --overwrite
+# check raster categories applied to the classification output
 r.category svc_classification_2023
 # display the results
 r.colors svc_classification_2023 color=roygbiv -e
@@ -706,8 +739,11 @@ d.rast shaded_relief
 d.vect isolines color='100:93:134' width=0
 d.rast svc_classification_2023
 d.grid -g size=00:30:00 color=white width=0.1 fontsize=16 text_color=white
-d.legend raster=svc_classification_2023 title="SVM 2023" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white
-d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
+d.legend raster=svc_classification_2023 title="SVM 2023" 
+	title_fontsize=19 font="Helvetica" fontsize=17 
+	bgcolor=white border_color=white
+d.legend raster=shaded_relief title="Relief, m" title_fontsize=19 
+	font="Helvetica" fontsize=17 bgcolor=white border_color=white -f
 d.out.file output=svc_2023 format=jpg --overwrite
 \end{lstlisting}
 
