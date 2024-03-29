@@ -200,15 +200,11 @@ e-mails: polina.lemenkova@plus.ac.at \\
 
 \subsection*{1.1. Background}
 
-\newpar In Remote Sensing (RS), detecting the complexity of landscapes, and the changes in land cover patches over time, are essential issues. Cartographic visualization of landscape patterns using RS data for highlighting their heterogeneity and spatio-temporal dynamics has been acknowledged as one of the most powerful approaches to reveal information about environmental changes in ecosystems such as land cover types, vegetation coverage and health of soil systems (). Specifically for African countries, fieldwork to capture data on landscape complexity is difficult from both financially and for practical reasons, and, depending on the safety of the study area, might become impossible. Therefore, RS data used for mapping landscape diversity and spatial dynamics for are critical tools for measuring environmental complexity and climate drivers of landscape changes for African continent (). 
+\newpar 
 
-\newpar Methods of processing RS data to retreave information from the satellite images are available at diverse Geographic Information System (GIS) and allow mapping the complexity of environmental variables using classification of the satellite images. For arid regions of Africa, such as Mauritania, time series of RS data is an important source of geo-information for visualising dynamics of the ecological patterns related to droughts. For instance, analysis of satellite images covering  countries located close to Sahara can help to better understand the effects from climate changes on coastal landscapes and climate-environmental patterns as well as to evaluate spatio-temporal dynamics. To mention a few cases, Landsat satellite images have long been used for environmental applications and geo-information, such as computing vegetation indices, mapping land cover changes (), ecosystem monitoring (), assessment deforestation (), hydrological modelling (), land use mapping and evaluating the effects of climate change on vegetation health ().
+\newpar An overview of the field demonstrates existing case studies which use independent specialised packages for image processing and classification (,,), as well as integrated approaches supporting GIS through programming, among which the open source software Geographic Resources Analysis Support System (GRASS) GIS \citep{NETELER2012124,MitasovaNeteler}. For instance, many programming libraries and packages of well-known languages (e.g., Python or R) attempt to evaluate patterns on satellite images using geospatial libraries \citep{Lemenkova202229,,,Lemenkova202227}, and some of the advanced software consider ML approaches () and scripting techniques (). Straightforwardness and robustness of ML algorithms are two fundamental advanced features of Artificial Intelligence (AI) that support the progress of script-based cartographic methods and allow its development towards automation, reliability and flexibility of mapping (). Hence, there is a growing demand from the cartographic community as well as environmental decision makers for the use of ML tools as automated and principally new step in mapping and RS domains. 
 
-\newpar Among the available traditional tools of satellite image processing and classification, novel methods of Machine Learning (ML) can now be used as a complementary advanced approach in RS. For instance, such algorithms as Random Forest (RF), Decision Tree (DT), Gradient Boosting or Support Vector Machine are designed to support image partition, classification and analysis through algorithms of decision trees and computer vision  and ( , , ). Moreover, the application of these methods beyond handling the pure Artificial Intelligence problems in computer science and their application in RS domain creates principally new perspectives in cartography by combining RS with programming approaches to geospatial modelling (,, ). It is particularly important to apply these technical resources to images with high heterogeneity and complexity of landscape patterns where computer-based image analysis can automatically generate decisions on image classification and assist in challenges of script-based mapping (). 
-
-\newpar An overview of the field demonstrates existing case studies which use independent specialised packages for image processing and classification (,,), as well as integrated approaches supporting GIS through programming, among which the open source software Geographic Resources Analysis Support System (GRASS) GIS (). For instance, many programming libraries and packages of well-known languages (e.g., Python or R) attempt to evaluate patterns on satellite images using geospatial libraries (,,,), and some of the advanced software consider ML approaches () and scripting techniques (). Straightforwardness and robustness of ML algorithms are two fundamental advanced features of Artificial Intelligence (AI) that support the progress of script-based cartographic methods and allow its development towards automation, reliability and flexibility of mapping (). Hence, there is a growing demand from the cartographic community as well as environmental decision makers for the use of ML tools as automated and principally new step in mapping and RS domains. 
-
-\newpar In this paper we will present the use of the advanced machine learning (ML) modules for image classification using the GRASS GIS with a case of Mauritania, west Africa. Specifically, we employ, compare and relate several functions of ML to image processing, namely Random Forest Classifier, Decision Tree Classifier, Gradient Boosting Classifier, Support Vector Machine Classifier, evaluate their performance and compare the results with the approaches of the conventional methods of image classification such as Minimal-Maximal Discriminant Analysis and k-means clustering. The potential of the ML modules of GRASS GIS for mapping ecological patterns and processes in arid climate of Sahel is exemplified with the case of fluctuating sebkhas of coastal Mauritania and associated landscape dynamics in the areas of salt dunes of Sub-Saharan Africa.
+\newpar In this paper we will present the use of the advanced machine learning (ML) modules for image classification using the GRASS GIS \citep{GRASS_GIS_software} with a case of Mauritania, west Africa. Specifically, we employ, compare and relate several functions of ML to image processing, namely Random Forest Classifier, Decision Tree Classifier, Gradient Boosting Classifier, Support Vector Machine Classifier, evaluate their performance and compare the results with the approaches of the conventional methods of image classification such as Minimal-Maximal Discriminant Analysis and k-means clustering. The potential of the ML modules of GRASS GIS for mapping ecological patterns and processes in arid climate of Sahel is exemplified with the case of fluctuating sebkhas of coastal Mauritania and associated landscape dynamics in the areas of salt dunes of Sub-Saharan Africa.
 
 \subsection*{1.2. Objectives and Motivation}
 
@@ -216,7 +212,7 @@ e-mails: polina.lemenkova@plus.ac.at \\
 
 \subsection*{1.3. Study Area}
 
-\newpar Text
+\newpar Similar to other regions of Sahara with salt lakes (e.g., \citep{ALI20231}), the formation of sal pans in Mauritania is related to salt tectonics and accumulation of evaporite deposits. Besides strong climate factors, the impact of geologic setting on the formation of salt pans is explained by rift geometries which are defined by horsts and tilted fault-blocks and generate base-salt flat topography which affects salt accumulation, flow direction, diapirism and deformation of overburden layers \citep{Pichel}. The distribution of salt minerals is mostly concentrated in desert areas with highly arid climate, i.e., where evaporation exceeds precipitation. In Africa, a typical region for the formation salt lakes, salt pans, chotts and sebkhas is northern region affected by Sahara \citep{Lemenkova202322,Lemenkova202313}. The crust of salt deposits and salty compacted sands creates natural resources for the country where salt is being produced for market and industrial purposes. 
 
 \begin{figure}[H]
 \centering
@@ -248,7 +244,7 @@ e-mails: polina.lemenkova@plus.ac.at \\
 
 \newsection {2. MATERIALS AND METHODS}
 
-\newpar Text
+\newpar The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.35\textwidth}
@@ -769,7 +765,7 @@ d.out.file output=svc_2023 format=jpg --overwrite
 %\bibliographystyle{plain}
 %\bibliographystyle{plainnat}
 \bibliography{Mauritania.bib}
-\nocite{*}
+%\nocite{*}
 
 % -----------------------------------------------------------------------------------------------
 % end of the AUTHOR section
