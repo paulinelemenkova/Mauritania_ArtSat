@@ -176,18 +176,19 @@ Machine Learning Methods of Remote Sensing Data Processing for Mapping Salt Pan 
 
 \begin{center}
 \textls{
-Polina \uppercase{Lemenkova}$^{1,}$$^2$  \\
-%Polina \uppercase{Lemenkova}$^1$  \\
+%Polina \uppercase{Lemenkova}$^{1,}$$^2$  \\
+Polina \uppercase{Lemenkova}$^1$  \\
 
 \vspace{6pt}
 
 $^1$Universität Salzburg, Fakultät für Digitale und Analytische Wissenschaften, \\ Fachbereich Geoinformatik, Salzburg, Austria.
 
-$^2$Università di Bologna, Dipartimento di Scienze Biologiche, Geologiche e Ambientali, Bologna, Italia.
+%$^2$Università di Bologna, Dipartimento di Scienze Biologiche, Geologiche e Ambientali, Bologna, Italia.
 
 \vspace{6pt}
 
-e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
+%e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
+e-mail: polina.lemenkova@plus.ac.at
 }
 \end{center}
 
@@ -195,11 +196,11 @@ e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
 
 % abstract and keywords
 
-{\bf ABSTRACT.} Recent advances in Machine Learning (ML) and computer technologies have made it possible to process satellite images using programming approach. Corresponding environmental applications that handle Remote Sensing (RS) data for spatial analysis use such approach, e.g., Python's library Scikit-Learn where algorithms on pattern identification, predictions, or image classification are possible. Nevertheless, due to the specific spatio-temporal setting of satellite images, Geographic Information System (GIS) methods are different from scripting libraries related to general programming, and there is a lack of efficient reports on applications of ML to satellite image processing. This paper presents a ML method applied to satellite image processing using Geographic Resources Analysis Support System (GRASS) GIS, using its modules for supervised classification. The aim of this study is to classify several multispectral Landsat images using ML for identification of changes in salt pan of west Mauritania, Africa over the period of 2014 to 2023. We first define 10 classes of land cover categories and perform analysis of geological, lithological and landscape setting of the study area, and then introduce the principles, algorithms, and processing of the ML methods of GRASS GIS. GRASS GIS supports diverse approaches of ML through different algorithms combining supervised learning models. The following models were employed to implement image classification with training: Random Forest (RF) Classifier, Decision Tree Classifier, Gradient Boosting Classifier and Support Vector Machine (SVM) Classifier. The results of the ML-based image processing were compared with clustering performed by k-means and unsupervised method using maximum-likelihood discriminant analysis classifier. The cartographic visualisation and validation was implement through accuracy analysis, and visualised a series of maps. The paper demonstrated a novel ML-based robust and reliable approach to satellite image processing which links Artificial Intelligence (AI) with cartographic tasks.
+{\bf ABSTRACT.} Recent advances in Machine Learning (ML) and computer technologies have made it possible to process satellite images using programming approach. Corresponding environmental applications that handle Remote Sensing (RS) data for spatial analysis use such approach, e.g., Python's library Scikit-Learn where algorithms on pattern identification, predictions, or image classification are possible. This paper presents a ML method applied to satellite image processing using Geographic Resources Analysis Support System (GRASS) GIS, using its modules for supervised classification. The aim of this study is to classify several multispectral Landsat images using ML for identification of changes in salt pan of west Mauritania, Africa over the period of 2014 to 2023. We first define 10 classes of land cover categories and perform analysis of geological, lithological and landscape setting of the study area, and then introduce the principles, algorithms, and processing of the ML methods of GRASS GIS. GRASS GIS supports diverse approaches of ML through different algorithms combining supervised learning models. The following models were employed to implement image classification with training: Random Forest (RF) Classifier, Decision Tree Classifier, Gradient Boosting Classifier and Support Vector Machine (SVM) Classifier. The results of the ML-based image processing were compared with clustering performed by k-means and unsupervised method using maximum-likelihood discriminant analysis classifier. The cartographic visualisation and validation was implement through accuracy analysis, and visualised a series of maps. The paper demonstrated a novel ML-based robust and reliable approach to satellite image processing which links Artificial Intelligence (AI) with cartographic tasks.
 
-\newpar {\bf Keywords:} West Africa, Machine Learning, Random Forest, Support Vector Machine, GRASS GIS; Satellite Image, Remote Sensing, Saline Lake.
+\newpar {\bf Keywords:} Machine Learning, Random Forest, Support Vector Machine, GRASS GIS; Satellite Image, Remote Sensing, Saline Lake.
 
-\pagebreak
+%\pagebreak
 \newsection {1. INTRODUCTION}
 
 \subsection*{1.1. Background}
@@ -216,7 +217,7 @@ e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
 
 \newpar Hence, there is a growing demand from the cartographic community as well as environmental decision makers for the use of ML tools as automated and principally new step in mapping and RS domains. Instead of unsupervised classification available in traditional software and clustering methods, GRASS GIS enables to collect the information of land categories with ML-based methods. This is a significant advantage of GRASS GIS since not all the GIS have such ML tools available in the functionality. With this regards, GRASS GIS presents perspectives of using the advanced embedded ML methods which can identify and record land cover classes on the satellite images in an Artificial Intelligence (AI)-based manner using computer vision techniques. 
 
-\newpar However, there is still a lack of efficient reports on ML-based methods to map the western region of Mauritania and evaluate changes using satellite images according to the review on related works on west Africa and coastal Mauritania. In view of this, we apply and propose a novel method of satellite image classification using GRASS GIS, using the combination of 'r.learn.train', 'r.learn.predict' and 'r.category' modules applied for RS data processing with a case of Landsat images. Instead of a single method, we tested a group of algorithms and evaluated their performance for cartographic data processing and image classification. Various algorithms of ML can be used for environmental monitoring by combining time series analysis of several satellite scenes within the GRASS GIS methods. Furthermore, it is easy to implement and maintain the scripts using the presented codes commented in the Methodology section. In this way, this manuscript contributes to the future reuse and applications of the proposed methods in similar studies on satellite image processing for environmental monitoring.
+\newpar Nevertheless, due to the specific spatio-temporal setting of satellite images, Geographic Information System (GIS) methods are different from scripting libraries related to general programming, and there is a lack of efficient reports on applications of ML to satellite image processing. Besides, there is still a lack of efficient reports on mapping salt pans in the western region of Mauritania which evaluate changes using satellite images according to the review on related works on west Africa and coastal Mauritania. In view of this, we apply and propose a novel method of satellite image classification using GRASS GIS, using the combination of 'r.learn.train', 'r.learn.predict' and 'r.category' modules applied for RS data processing with a case of Landsat images. Instead of a single method, we tested a group of algorithms and evaluated their performance for cartographic data processing and image classification. Various algorithms of ML can be used for environmental monitoring by combining time series analysis of several satellite scenes within the GRASS GIS methods. Furthermore, it is easy to implement and maintain the scripts using the presented codes commented in the Methodology section. In this way, this manuscript contributes to the future reuse and applications of the proposed methods in similar studies on satellite image processing for environmental monitoring.
 
 \newpar As a response to this need, in this paper we present the use of the advanced ML modules for image classification using the GRASS GIS \citep{GRASS_GIS_software} with a case of Mauritania, west Africa. Specifically, we employ, compare and relate several functions of ML to image processing, namely Random Forest Classifier, Decision Tree Classifier, Gradient Boosting Classifier, Support Vector Machine Classifier, evaluate their performance and compare the results with the approaches of the conventional methods of image classification such as Minimal-Maximal Discriminant Analysis and k-means clustering. The potential of the ML modules of GRASS GIS \citep{NetelerMitasova2002} for mapping ecological patterns and processes in arid climate of Sahel is exemplified with the case of fluctuating sebkhas of coastal Mauritania and associated landscape dynamics in the areas of salt dunes of Sub-Saharan Africa.
 
@@ -230,7 +231,7 @@ e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
 
 \begin{figure}[H]
 \centering
-	\includegraphics[width=15.0 cm]{Fig_01.jpg}
+	\includegraphics[width=16.0 cm]{Fig_01.jpg}
 	\vspace*{20pt}\caption{Topographic map of Mauritania showing the extent of the study area of the Sebkha de Ndrhamcha salt pan (rotated yellow square) with . Data: General Bathymetric Chart of the Oceans (GEBCO) / Shuttle Radar Topography Mission (SRTM). Software: Generic Mapping Tools (GMT). Map source: author.
 	\label{fig01}}
 \end{figure}
