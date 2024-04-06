@@ -223,7 +223,7 @@ Instead of unsupervised classification available in traditional software and clu
 
 \subsection*{1.3. Structure}
 
-\newpar  The remainder of the paper is organised as follows. Section 'Study Area' gives formal description of the study area and related geological, topographic and environmental setting illustrated by thematic maps. Section 'Materials and Methods' described the data used for image processing with mentioned metadata, proposes the approaches of GRASS GIS including the comments on its ML module, their principles of RS data processing, functionalities, structure of methodology, and comments the scripts which area available in the Appendix. Section 'Results and Discussion' discusses several outcomes of image processing by examples of ML-based maps. Section 'Conclusion' demonstrates the implementation of the ML methods of GRASS GIS applied for the salt lakes of Mauritania and concludes the manuscript.
+\newpar  The remainder of the paper is organised as follows. Section 'Study Area' gives formal description of the study area and related geological, topographic and environmental setting illustrated by thematic maps. Section 'Materials and Methods' described the data used for image processing with mentioned metadata, proposes the approaches of GRASS GIS including the comments on its ML module, their principles of RS data processing, functionalities, structure of methodology, and comments the scripts which area available in the Appendix. 'Results and Discussion' discusses several outcomes of image processing by examples of ML-based maps. Section 'Conclusion' demonstrates the implementation of the ML methods of GRASS GIS applied for the salt lakes of Mauritania and concludes the manuscript.
 
 \newsection {2. STUDY AREA}
 
@@ -279,27 +279,27 @@ The prevalence of one or more of these settings favours formation of the salt pa
 
 \newsection {2. MATERIALS AND METHODS}
 
-\newpar The data used in this study include six satellite multispectral images Landsat, with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for November months for years 2014, 2017, 2018, 2020, 2022 and 2023.
+\newpar The data used in this study include six satellite multispectral images Landsat, with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for April months for years 2014, 2017, 2018, 2020, 2022 and 2023.
 
 \begin{table}[H]
-\small
-\caption{Metadata of the satellite images used in this study: Landsat-8 OLI/TIRS USGS \textsuperscript{1}.\label{tab1}}
-\begin{tabularx}{\textwidth}{cc}
+\scriptsize
+\caption{Metadata of the multispectral satellite images Landsat 8-9 OLI/TIRS, used in this study, obtained from the USGS \textsuperscript{1}.\label{tab1}}
+\begin{tabularx}{\textwidth}{cccccc }
 			\toprule
-			\textbf{Method} & \textbf{Processing Time} \\
+			\textbf{Date} & \textbf{\makecell{Spacecraft /\\ID}} & \textbf{\makecell{Path/\\Row}} & \textbf{Entity Product ID} & \textbf{Scene ID} & \textbf{\makecell{Cloud/\\Coverage}} \\
 			\midrule
-			Clustering & - \\
-			Min-max discriminant analysis & - \\
-			Random Forest Classifier & 9 minutes  \\
-			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
-			Gradient Boosting Classifier & 23 minutes  \\
-			Support Vector Machine Classifier & 47 minutes  \\
+			2014/04/27 & Landsat 8 & 205/47 & \makecell{LC08\_L2SP\_205047\_20140427\_20200911\_02\_T1} & LC82050472014117LGN01 & 0.00 \\
+			2017/04/03 & Landsat 8 & 205/47 & \makecell{LC08\_L2SP\_205047\_20170403\_20200904\_02\_T1} & LC82050472017093LGN00 & 0.04 \\
+			2018/04/22 & Landsat 8 & 205/47 & \makecell{LC08\_L2SP\_205047\_20180422\_20201015\_02\_T1} & LC82050472018112LGN00 & 0.04 \\
+			2020/04/11 & Landsat 8 & 205/47 & \makecell{LC08\_L2SP\_205047\_20200411\_20200822\_02\_T1} & LC82050472020102LGN00 & 0.17 \\
+			2022/04/09 & Landsat 8 & 205/47 & \makecell{LC09\_L1TP\_205047\_20220409\_20230422\_02\_T1} & LC92050472022099LGN01 & 0.00 \\
+			2023/04/28 & Landsat 9 & 205/47 & \makecell{LC09\_L2SP\_205047\_20230428\_20230430\_02\_T1} & LC92050472023118LGN00 & 0.01 \\
 			\bottomrule
-\end{tabularx}
+		\end{tabularx}
 	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
 \end{table}
 
-The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
+\newpar The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.35\textwidth}
@@ -334,8 +334,12 @@ The map in Figure 1 showing topographic setting and the location of the study ar
 		\includegraphics[width=0.87\textwidth]{Fig_05f.jpg}
 		\caption{2023}
 	\end{subfigure}%
-\vspace*{20pt}\caption{Landsat 8-9 satellite images covering salt pan Sebkha de Ndrhamcha in western Mauritania in natural colours showing floodplain for six years (always November): (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023.}\label{fig05}
+\vspace*{20pt}\caption{Landsat 8-9 satellite images covering salt pan Sebkha de Ndrhamcha in western Mauritania in natural colours showing floodplain for six years (always April): (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023.}\label{fig05}
 \end{figure}
+
+\newpar The images were processed using scripts provided in the Appendix. First, the data were imported into the GRASS GIS environment and preprocessed using script provided in Listing \ref{lst01}. Then, the images were classified using unsupervised clustering methods with k-means algorithms. The GRASS GIS script used for   unsupervised classification is provided in Listing \ref{lst02}. The results of this classification were used as training polygons for machine learning methods providing the 'seed' information for supervised learning. The next step included the application of Random Forest Classifier for image classification. The programming code for this is provided in Listing \ref{lst03}. The following step included the use of the Decision Tree Classifier for image classification with script demonstrated in Listing \ref{lst04}. The algorithms of Gradient Boosting Classifier for image classification was performed using programming code shown in Listing \ref{lst05}. 
+
+\newpar Finally, the algorithm of Support Vector Machine (SVM) Classifier was applied for supervised image classification using script in Listing \ref{lst06}. The performance of the algorithms demonstrated different time consumption and machine resources. Therefore, to note the difference in speed and required time for execution, we summarised the performance of the methods in Table \ref{tab2}. As can be noted, the quickest algorithm was the Decision Tree Classifier, while the longest period of data processing was demonstrated by the Support Vector Machine Classifier. The data were processed using the MacOS 14.2.1 (23C71), Apple M1 Chip Processor. 
 
 \begin{table}[H]
 \small
@@ -344,10 +348,10 @@ The map in Figure 1 showing topographic setting and the location of the study ar
 			\toprule
 			\textbf{Method} & \textbf{Processing Time} \\
 			\midrule
-			Clustering & - \\
-			Min-max discriminant analysis & - \\
+			Clustering & $<$ 1 minute \\
+			Min-max discriminant analysis & ca. 25 sec \\
 			Random Forest Classifier & 9 minutes  \\
-			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
+			Decision Tree Classifier & ca. 34 sec \\
 			Gradient Boosting Classifier & 23 minutes  \\
 			Support Vector Machine Classifier & 47 minutes  \\
 			\bottomrule
@@ -355,7 +359,7 @@ The map in Figure 1 showing topographic setting and the location of the study ar
 	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
 \end{table}
 
-\pagebreak
+%\pagebreak
 \newsection {3. RESULTS AND DISCUSSION}
 
 Environmental and hydrological planning in arid regions of Africa is essential and is largely based on using geo-information such as satellite images. With this regards, current paper contributed to mapping of the hydrologically vulnerable  areas Mauritanian coasts through detecting fluctuating area of sebkhas and crust salt pan. The results of the satellite images processing are presented in maps shown in Figures \ref{fig06} to \ref{fig11} in the following subsections.
@@ -640,13 +644,13 @@ WGS & World Geodetic System \\
 
 \vspace{12pt}
 
-\newsection {APPENDIX}
+\newsection {APPENDIX}\label{App}
 \vspace{12pt}
 
 \subsection*{GRASS GIS scripts for RS data processing}
 
 \begin{lstlisting}[language=bash, caption=GRASS GIS script for data import and preprocessing,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:01}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst01}]
 r.import input=/Users/polinalemenkova/grassdata/Mauritania/\
 	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B1.TIF 
 	output=L_2023_01 extent=region resolution=region
@@ -677,7 +681,7 @@ r.contour shaded_relief out=isolines step=200 --overwrite
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash, caption=GRASS GIS script for image clustering and classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:02}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst02}]
 # Setting computational region to match the scene
 g.region raster=L_2023_01 -p
 # grouping data by i.group
@@ -724,7 +728,7 @@ d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 \subsection*{Machine Learning scripts of GRASS GIS for image processing}
 
 \begin{lstlisting}[language=bash, caption=Random Forest Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:03}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst03}]
 # Generating training pixels from an older land cover classification:
 r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels
 # training a model using r.learn.train
@@ -751,7 +755,7 @@ d.out.file output=RFC_2023 format=jpg --overwrite
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash, caption=Decision Tree Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:04}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst04}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
     model_name=DecisionTreeClassifier n_estimators=500 
@@ -776,7 +780,7 @@ d.out.file output=DTC_2023 format=jpg --overwrite
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:05}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst05}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
     model_name=GradientBoostingClassifier n_estimators=500 
@@ -801,7 +805,7 @@ d.out.file output=GBC_2023 format=jpg --overwrite
 \end{lstlisting}
 
 \begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
-stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst:06}]
+stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst06}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
     model_name=SVC n_estimators=500 save_model=svc_model.gz --overwrite
