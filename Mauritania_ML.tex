@@ -362,7 +362,7 @@ The prevalence of one or more of these settings favours formation of the salt pa
 %\pagebreak
 \newsection {3. RESULTS AND DISCUSSION}
 
-Environmental and hydrological planning in arid regions of Africa is essential and is largely based on using geo-information such as satellite images. With this regards, current paper contributed to mapping of the hydrologically vulnerable  areas Mauritanian coasts through detecting fluctuating area of sebkhas and crust salt pan. The changes in the land cover types detected and visualised by the GRASS GIS are generated from the Landsat 8-9 dataset and shown in corresponding Figures Figures \ref{fig06} to \ref{fig11} according to the applied methods of unsupervised and supervised classification. The land categories for the years 2014 to 2013 and their statistics are presented in Table \ref{tab3}. 
+\newpar Environmental and hydrological planning in arid regions of Africa is essential and is largely based on using geo-information such as satellite images. With this regards, current paper contributed to mapping of the hydrologically vulnerable  areas Mauritanian coasts through detecting fluctuating area of sebkhas and crust salt pan. The changes in the land cover types detected and visualised by the GRASS GIS are generated from the Landsat 8-9 dataset and shown in corresponding Figures Figures \ref{fig06} to \ref{fig11} according to the applied methods of unsupervised and supervised classification. The land categories for the years 2014 to 2013 and their statistics are presented in Table \ref{tab3}. Here, the land cover classes are designated as the following categories: 1) Water bodies; 2) Shelf and coastal plains; 3) Sebkha; 4) Urban areas; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks. 
 
 \begin{table}[H]
 \caption{Estimated classes of land cover types in Western Mauritania, Sebkha de Ndrhamcha, for April period}
@@ -373,17 +373,18 @@ Environmental and hydrological planning in arid regions of Africa is essential a
      & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
     \midrule
     \textbf{2014} & 1410 & 4 & 30 & 79 & 202 & 708 & 1239 & 1581 & 1493 & 178 \\
+    
     \textbf{2017} & 1386 & 43 & 70 & 141 & 215 & 668 & 1056 & 1742 & 1548 & 144 \\
     \textbf{2018} & 1384 & 21 & 78 & 110 & 182 & 598 & 1195 & 1975 & 1353 & 117 \\
     \textbf{2020} & 1395 & 2 & 28 & 145 & 228 & 582 & 881 & 2502 & 1231 & 20 \\
     \textbf{2022} & 1443 & 2 & 20 & 116 & 197 & 532 & 970 & 2567 & 1146 & 40 \\
-    \textbf{2023} & X & X & X & X & X & X & X & X & X & X \\
+    \textbf{2023} & 1468 & 31 & 53 & 136 & 253 & 538 & 1153 & 1622 & 1577 & 206 \\
 \bottomrule
 \end{tabularx}
   \label{tab3}
 \end{table}
 
-Based on the presented the results, the largest category was barren land subdivided into different classes (Salty sands, Compact soil; Stony desert and yellow dunes; Sandy desert and white dunes), followed by vegetation class (Sahelian grassland) and salt pan (Class 2 of sebkha). The other land use categories included water surfaces, built-up urban areas and agricultural lands.The results of the satellite images processing are presented in maps shown in Figures \ref{fig06} to \ref{fig11} in the following subsections.
+The results of the satellite images processing are presented in maps shown in Figures \ref{fig06} to \ref{fig11} in the following subsections. The results of the ML-based classification for Sebkha de Ndrhamcha region  is shown in the corresponding Figures for each method applied (Clustering, Random Forest Classifier, Decision Tree Classifier, Gradient Boosting Classifier, and Support Vector Machine) and numerical computation of the area occupied by each land category is summarised in Table \ref{tab3}. It revealed that the largest land cover class was Class 8 (Stony desert and yellow dunes) according to the extent of the satellite images, followed by the Class 7 of Compact soil and barren land in the desert areas which represent the dunes of the Sahara. It was then followed by water surfaces (Class 1) which occupy shelf areas and Class 7 (Compact soil of the pre-Sahara lands) and Class 6 (Salty sands located in the saline soils). The distribution of other land cover types is summarised in the Table \ref{tab3}. The smallest class is occupied by Class 2 which is represented by the narrow shelf strip of the coastal plains with specific aquatic vegetation between the water area and coastal regions. 
 
 \subsection*{Clustering}
 
@@ -425,7 +426,7 @@ Based on the presented the results, the largest category was barren land subdivi
 \vspace*{20pt}\caption{Classified Landsat 8-9 OLI/TIRS satellite images using clustering method . Background shaded relief: GEBCO grid. (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig06}
 \end{figure}
 
-\newpar The following 10 land cover classes were identified and visualised, Figure \ref{fig06}: 1) Water bodies; 2) Sebkha; 3) Urban areas; 4) Compact sand; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks. The accuracy assessment performed using the estimated rejection probability is shown in Figure \ref{fig07}. It shows the correctness of the pixels associated with each land cover class according to the clustering method of k-means, used in GRASS GIS.
+\newpar The accuracy assessment performed using the estimated rejection probability is shown in Figure \ref{fig07}. It shows the correctness of the pixels associated with each land cover class according to the clustering method of k-means, used in GRASS GIS. The map of land cover types for 2014 had an overall kappa statistic of 0.97 and an overall accuracy of 98.34\% which indicated the correctly classified pixels with stable points, the classification for 2017 had overall accuracy of 98.08\%, for year 2018 -- 98.29\%, for 2020 -- 98.36\%, for 2022 -- 98.64\% and for year 2023 -- 98.56\% of computed overall accuracy.  
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -469,7 +470,7 @@ Based on the presented the results, the largest category was barren land subdivi
 
 \subsection*{Random Forest Classifier}
 
-Western Mauritania is located within the Sahara–Sahel transition zone of arid and semi-arid regions of Africa. Scarce water resources and fluctuation of salt lakes and sebhkas motivates the need for mapping of water availability and distribution of salt pans. The results of Random Forest classification applied for mapping sebkhas are shown in Figure \ref{fig08}.
+The results of Random Forest classification applied for mapping sebkhas are shown in Figure \ref{fig08}. The following 10 land cover classes were identified and visualised, Figure \ref{fig06}: 1) Water bodies; 2) Shelf and coastal plains; 3) Sebkha; 4) Urban areas; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks. 
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -511,7 +512,7 @@ Western Mauritania is located within the Sahara–Sahel transition zone of arid 
 
 \subsection*{Decision Tree Classifier}
 
-Practical application of this work consists in land management since visualization of the extents of wetlands and water bodies enables to plan potential drainage networks based on the hydrological connections, as well as evaluate spatial location of aquatic habitats \cite{CAMPOS2012438}. Using the maps demonstrated on the series of images processed by Decision Tree classification, the distinct land cover classes are visualised for the study area, including the location of sebkhas and its changing extent over the years, Figure \ref{fig09}.
+Based on the presented the results, the largest category was barren land subdivided into different classes (Salty sands, Compact soil; Stony desert and yellow dunes; Sandy desert and white dunes), followed by vegetation class (Sahelian grassland) and salt pan (Class 2 of sebkha). The other land use categories included water surfaces, built-up urban areas and agricultural lands. Using the maps demonstrated on the series of images processed by Decision Tree classification, the distinct land cover classes are visualised for the study area, including the location of sebkhas and its changing extent over the years, Figure \ref{fig09}.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -595,7 +596,7 @@ The areas of diverse land cover types detected using Gradient Boosting classific
 
 \subsection*{Support Vector Machine (SVM) Classifier}
 
-The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to reveal hidden information on land cover types and changes in landscape patterns in west Mauritania through processed satellite images Landsat, Figure \ref{fig11}. New created maps demonstrated changes in distribution of sebkhas and can assist land planners and environmentalists specialised on Mauritania.
+The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to reveal hidden information on land cover types and changes in landscape patterns in west Mauritania through processed satellite images Landsat, Figure \ref{fig11}. 
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -635,9 +636,14 @@ The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to r
 \vspace*{20pt}\caption{Support Vector Machine (SVM) Classifier of Machine Learning (ML) classification methods applied for processing of satellite images. Background relief: GEBCO: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig11}
 \end{figure}
  
+\pagebreak
 \newsection {4. CONCLUSIONS}
 
 \newpar This paper demonstrated the application of GRASS GIS modules of machine learning (ML) for satellite image processing. Practical use of the presented maps consists in the support to make use of geoinformation, adjust it for land monitoring, discover the climate factors which cause landscape dynamics in the coastal regions of Africa. Using the algorithms of image processing from statistical and programming libraries, the changed landscape patterns were detected and the cartographic visualisation was adjusted from a computer vision perspective using several ML-based algorithms: Random Forest (RF) Classifier, Decision Tree Classifier, Gradient Boosting Classifier and Support Vector Machine (SVM) Classifier. The traditional unsupervised methods of classification were compared with the ML-based methods. While clustering demonstrated difficulties in correct detection of land parcels using spectral reflectance, the ML-based supervised techniques of trained learning, as a complement, can detect, identify and record such information using the computer vision algorithms in a straightforward and automated manner. 
+
+\newpar The goal of this study was to analyse the changes in land cover changes in costal region southwestern Mauritania including salt pan of Sebkha de Ndrhamcha to visualise dynamics in salt crust and surrounding landscapes. The data and methods were selected to achieve this goal according to the cartographic techniques of satellite image processing. Hence, the data used for evaluation included satellite images Landsat obtained from the USGS as remote sensing dataset from 2014 to 2023. The methods used for evaluation and cartographic work included unsupervised and supervised classification used for comparison between traditional and machine learning GIS techniques of GRASS GIS. The results indicated that there was a remarkable change in all classes of land cover types, with and fluctuations in all classes. The changes between class occupied by compact soil and bare soil and rocks well correlate with those in sandy desert and dunes. This is especially notable for years 2020 and 2022 which shows regional climate impacts with the effects of winds and eolian processes that increases the areas of dunes and sandy areas and decrease of bare soils, accordingly. Likewise, the decrease of shelf and coastal plains is visible for the same period that might be related to the active upwelling processes in this time.
+
+\newpar The presented study focused on satellite-based evaluation of landscape in Western Mauritania which is located within the Sahara–Sahel transition zone of arid and semi-arid regions of Africa. Scarce water resources and fluctuation of salt lakes and sebhka motivates the need for mapping of water availability and distribution of salt pans. Changes in land cover classes including fluctuations in the salinisation were revealed using machine learning (ML) methods of satellite image processing using GRASS GIS. Practical application of this work consists in land management since visualization of the extents of wetlands and water bodies enables to plan potential drainage networks based on the hydrological connections, as well as evaluate spatial location of aquatic habitats \cite{CAMPOS2012438}. Hence, new created maps demonstrated changes in distribution of sebkhas and can assist land planners and environmentalists specialised on Mauritania.
 
 \vspace{12pt}
 
