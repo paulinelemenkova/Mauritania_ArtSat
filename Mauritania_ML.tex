@@ -61,7 +61,7 @@
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\scriptsize,
+    basicstyle=\ttfamily\tiny,
     breakatwhitespace=false,         
     breaklines=true,                 
     captionpos=b,                    
@@ -214,8 +214,7 @@ e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
 
 \subsection*{1.1. Objectives and Motivation}
 
-\newpar Hence, there is a growing demand from the cartographic community as well as environmental decision makers for the use of ML tools as automated and principally new step in mapping and RS domains. 
-Instead of unsupervised classification available in traditional software and clustering methods, GRASS GIS enables to collect the information of land categories with ML-based methods. This is a significant advantage of GRASS GIS since not all the GIS have such ML tools available in the functionality. With this regards, GRASS GIS presents perspectives of using advanced embedded ML methods which can identify and record land cover classes on the satellite images in an AI-based manner using computer vision techniques. 
+\newpar Hence, there is a growing demand from the cartographic community as well as environmental decision makers for the use of ML tools as automated and principally new step in mapping and RS domains. Instead of unsupervised classification available in traditional software and clustering methods, GRASS GIS enables to collect the information of land categories with ML-based methods. This is a significant advantage of GRASS GIS since not all the GIS have such ML tools available in the functionality. With this regards, GRASS GIS presents perspectives of using the advanced embedded ML methods which can identify and record land cover classes on the satellite images in an Artificial Intelligence (AI)-based manner using computer vision techniques. 
 
 \newpar However, there is still a lack of efficient reports on ML-based methods to map the western region of Mauritania and evaluate changes using satellite images according to the review on related works on west Africa and coastal Mauritania. In view of this, we apply and propose a novel method of satellite image classification using GRASS GIS, using the combination of 'r.learn.train', 'r.learn.predict' and 'r.category' modules applied for RS data processing with a case of Landsat images. Instead of a single method, we tested a group of algorithms and evaluated their performance for cartographic data processing and image classification. Various algorithms of ML can be used for environmental monitoring by combining time series analysis of several satellite scenes within the GRASS GIS methods. Furthermore, it is easy to implement and maintain the scripts using the presented codes commented in the Methodology section. In this way, this manuscript contributes to the future reuse and applications of the proposed methods in similar studies on satellite image processing for environmental monitoring.
 
@@ -231,12 +230,12 @@ Instead of unsupervised classification available in traditional software and clu
 
 \begin{figure}[H]
 \centering
-	\includegraphics[width=16.0 cm]{Fig_01.jpg}
-	\vspace*{20pt}\caption{Topographic map of Mauritania showing the extent of the study area of the Sebkha de Ndrhamcha salt pan (rotated yellow square) with . Data: GEBCO. Software: GMT. Map source: author.
+	\includegraphics[width=15.0 cm]{Fig_01.jpg}
+	\vspace*{20pt}\caption{Topographic map of Mauritania showing the extent of the study area of the Sebkha de Ndrhamcha salt pan (rotated yellow square) with . Data: General Bathymetric Chart of the Oceans (GEBCO) / Shuttle Radar Topography Mission (SRTM). Software: Generic Mapping Tools (GMT). Map source: author.
 	\label{fig01}}
 \end{figure}
 
-The prevalence of one or more of these settings favours formation of the salt pans and results in different level of their salinity \citep{TARI2017331}. Thus, marine coastal sabkhas are more associated with the processes of evaporation and accumulation of marine deposites, while continental playas, or interdune sabkhas are related to barchan formation and dune mobility \citep{HANDFORD1981255,Ould}. Different salinity of salt lake sediments enables to distinguish the north-west Africa hypersaline chotts with saline levels surpassing that of ocean water due to high concentrations of brines \citep{Lemenkova202313} and unvegetated sebkhet with moderate salinity \citep{Lemenkova202322} from vegetated sebkhets with a relatively low salinity that ranges from 2 to 42 g NaCl per litre \citep{SOULIEMARSCHE200869}.
+The prevalence of one or more of these settings favours formation of the salt pans and results in different level of their salinity \citep{TARI2017331}. Thus, marine coastal sabkhas are more associated with the processes of evaporation and accumulation of marine deposits, while continental playas, or inter-dune sabkhas are related to barchan formation and dune mobility \citep{HANDFORD1981255,Ould}. Different salinity of salt lake sediments enables to distinguish the north-west Africa hypersaline chotts with saline levels surpassing that of ocean water due to high concentrations of brines \citep{Lemenkova202313} and non-vegetated sebkhas with moderate salinity \citep{Lemenkova202322} from vegetated sebkhas with a relatively low salinity that ranges from 2 to 42 g NaCl per litre \citep{SOULIEMARSCHE200869}.
 
 \newpar The geologic setting of the Western Mauritania is presented by a series of Quaternary marine deposits formed in gulfs of the Senegalo-Mauritanian Tertiary-Cretaceous basin, Figure \ref{fig02}. During the uplift of the basin in Miocene, this area undergone four successive transgressions and three regressions which resulted in the accumulated continental formations covering marine deposits with sandy-glauconitic facies and diatomite layers \citep{barry2003contribution}. Several periods of eustatic movements of the world's oceans formed current Quaternary shape of the coastal zone in West Mauritania with lakes and lagoons becoming sebkhas and bays becoming lagoons during the alternating periods \citep{EINSELE1974282,Elouard}.
 
@@ -279,7 +278,7 @@ The prevalence of one or more of these settings favours formation of the salt pa
 
 \newsection {2. MATERIALS AND METHODS}
 
-\newpar The data used in this study include six satellite multispectral images Landsat, with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for April months for years 2014, 2017, 2018, 2020, 2022 and 2023.
+\newpar The data used in this study include six satellite multispectral images Landsat by National Aeronautics and Space Administration (NASA), with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for April months for years 2014, 2017, 2018, 2020, 2022 and 2023.
 
 \begin{table}[H]
 \scriptsize
@@ -296,7 +295,7 @@ The prevalence of one or more of these settings favours formation of the salt pa
 			2023/04/28 & Landsat 9 & 205/47 & \makecell{LC09\_L2SP\_205047\_20230428\_20230430\_02\_T1} & LC92050472023118LGN00 & 0.01 \\
 			\bottomrule
 		\end{tabularx}
-	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
+	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the United States Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
 \end{table}
 
 \newpar The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
@@ -639,34 +638,35 @@ The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to r
 \pagebreak
 \newsection {4. CONCLUSIONS}
 
-\newpar This paper demonstrated the application of GRASS GIS modules of machine learning (ML) for satellite image processing. Practical use of the presented maps consists in the support to make use of geoinformation, adjust it for land monitoring, discover the climate factors which cause landscape dynamics in the coastal regions of Africa. Using the algorithms of image processing from statistical and programming libraries, the changed landscape patterns were detected and the cartographic visualisation was adjusted from a computer vision perspective using several ML-based algorithms: Random Forest (RF) Classifier, Decision Tree Classifier, Gradient Boosting Classifier and Support Vector Machine (SVM) Classifier. The traditional unsupervised methods of classification were compared with the ML-based methods. While clustering demonstrated difficulties in correct detection of land parcels using spectral reflectance, the ML-based supervised techniques of trained learning, as a complement, can detect, identify and record such information using the computer vision algorithms in a straightforward and automated manner. 
+\newpar This paper demonstrated the application of GRASS GIS modules of machine learning (ML) for satellite image processing. Practical use of the presented maps consists in the support to make use of geoinformation, adjust it for land monitoring, discover the climate factors which cause landscape dynamics in the coastal regions of Africa. Using the algorithms of image processing from statistical and programming libraries, the changed landscape patterns were detected and the cartographic visualisation was adjusted from a computer vision perspective using several ML-based algorithms: Random Forest (RF) Classifier, Decision Tree Classifier, Gradient Boosting Classifier and Support Vector Machine (SVM) Classifier. The traditional unsupervised methods of classification were compared with the ML-based methods. While clustering demonstrated difficulties in correct detection of land parcels using spectral reflectance, the ML-based supervised techniques of trained learning, as a complement, detected, identified and recorded such information using computer vision algorithms in an automated manner. 
 
-\newpar The goal of this study was to analyse the changes in land cover changes in costal region southwestern Mauritania including salt pan of Sebkha de Ndrhamcha to visualise dynamics in salt crust and surrounding landscapes. The data and methods were selected to achieve this goal according to the cartographic techniques of satellite image processing. Hence, the data used for evaluation included satellite images Landsat obtained from the USGS as remote sensing dataset from 2014 to 2023. The methods used for evaluation and cartographic work included unsupervised and supervised classification used for comparison between traditional and machine learning GIS techniques of GRASS GIS. The results indicated that there was a remarkable change in all classes of land cover types, with and fluctuations in all classes. The changes between class occupied by compact soil and bare soil and rocks well correlate with those in sandy desert and dunes. This is especially notable for years 2020 and 2022 which shows regional climate impacts with the effects of winds and eolian processes that increases the areas of dunes and sandy areas and decrease of bare soils, accordingly. Likewise, the decrease of shelf and coastal plains is visible for the same period that might be related to the active upwelling processes in this time.
+\newpar To cope with the problem of soil salinisation in the drought-prone region of arid Africa, such as coastal Mauritania, Earth observation data are needed as effective data source for comparison and visualization of changes and dynamics of salt crust. However, the use of the traditional methods of RS data processing is time-consuming and might be prone to misclassification. In contrast, ML methods applied to EO data processing ensure automated and effective way to visualise, classify and numerically estimate changes in land cover types using algorithms of statistical data processing and computer vision. With this regards, this manuscript presents the contribution to the development of such methods with a case of West Africa, Mauritania.
+
+\newpar The goal of this study was to analyse the changes in land cover changes in costal region southwestern Mauritania including salt pan of Sebkha de Ndrhamcha to visualise dynamics in salt crust and surrounding landscapes. The data and methods were selected to achieve this goal according to the cartographic techniques of satellite image processing. Hence, the data used for evaluation included satellite images Landsat obtained from the United States Geological Survey (USGS) as remote sensing dataset from 2014 to 2023. The methods used for evaluation and cartographic work included unsupervised and supervised classification used for comparison between traditional and machine learning GIS techniques of GRASS GIS. The results indicated that there was a remarkable change in all classes of land cover types, with and fluctuations in all classes. The changes between class occupied by compact soil and bare soil and rocks well correlate with those in sandy desert and dunes. This is especially notable for years 2020 and 2022 which shows regional climate impacts with the effects of winds and eolian processes that increases the areas of dunes and sandy areas and decrease of bare soils, accordingly. Likewise, the decrease of shelf and coastal plains is visible for the same period that might be related to the active upwelling processes in this time.
+
+\newpar In general, coastal region of southwestern Mauritania, along the Sebkha de Ndrhamcha, has experienced considerable changes in land cover classes over the past decade (2014-2023), throughout the area of categories including their fragmentation and extent. However, changes have been significant in the central part of the salt pan, which also supports the main fluctuations of saline crust and salinisation of soils in the surroundings. Thus, the results of this study revealed that, over the past 10-year period, the salinisation of the sandy areas around salt pan increased whereas the barren lands decreased in the study area and replaced by the salty sands and dunes of desert. The details of land cover changes are shown in corresponding Figures made using various techniques of machine learning (ML) algorithms using GRASS GIS. The overall results of the study highlighted that GRASS GIS techniques of ML are highly effective for satellite image processing as advanced and straightforward methods of supervised image classification. 
 
 \newpar The presented study focused on satellite-based evaluation of landscape in Western Mauritania which is located within the Sahara–Sahel transition zone of arid and semi-arid regions of Africa. Scarce water resources and fluctuation of salt lakes and sebhka motivates the need for mapping of water availability and distribution of salt pans. Changes in land cover classes including fluctuations in the salinisation were revealed using machine learning (ML) methods of satellite image processing using GRASS GIS. Practical application of this work consists in land management since visualization of the extents of wetlands and water bodies enables to plan potential drainage networks based on the hydrological connections, as well as evaluate spatial location of aquatic habitats \cite{CAMPOS2012438}. Hence, new created maps demonstrated changes in distribution of sebkhas and can assist land planners and environmentalists specialised on Mauritania.
 
+\newpar To conclude, the demonstrated case of the environmental mapping by satellite data processing using by ML algorithms supports the analysis of salinisation in salty sand areas and sebkha of West Mauritania related to climate change. Using GRASS GIS as a powerful cartographic tools promotes the use of scripts as advanced techniques for processing geoinformation. Such  technologies ensure future research efforts which can continue further the presented study through focus on identifying salinisation of soil for other time periods. GRASS GIS-based methods of processing Earth observation data and formulating optimal ML approaches among the existing algorithms enables to develop effective methods for satellite image processing. In turn, efficient cartographic instruments supported by programming methods for image processing provide technical support for the environmental-climate visualization and analysis of such rare areas as Sebkha de Ndrhamcha, West Mauritania. 
+
 \vspace{12pt}
 
-\pagebreak
 \newsection {ABBREVIATIONS}
 \vspace{12pt}
 
 \begin{tabular}{@{}ll}
+AI & Artificial Intelligence \\
 DCW & Digital Chart of the World \\
-EPSG & European Petroleum Survey Group \\
-ESA & European Space Agency \\
-ESRI & Environmental Systems Research Institute \\
+EO & Earth Observation\\
 GEBCO & General Bathymetric Chart of the Oceans \\
 GIS & Geographic Information System \\
 GMT & Generic Mapping Tools \\
+GRASS & Geographic Resources Analysis Support System \\
 Landsat OLI/TIRS & Landsat Operational Land Imager and the Thermal Infrared Sensor \\
-MODIS & Moderate Resolution Imaging Spectroradiometer \\
 NASA & National Aeronautics and Space Administration \\
-SPOT & Satellite Pour l'Observation de la Terre \\
 SRTM & Shuttle Radar Topography Mission \\
-USGS & United States Geological Survey \\
-UTM & Universal Transverse Mercator \\
-WGS & World Geodetic System \\
+USGS & United States Geological Survey
 \end{tabular}
 
 \vspace{12pt}
@@ -676,7 +676,7 @@ WGS & World Geodetic System \\
 
 \subsection*{GRASS GIS scripts for RS data processing}
 
-\begin{lstlisting}[language=bash, caption=GRASS GIS script for data import and preprocessing,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=GRASS GIS script for data import and preprocessing,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst01}]
 r.import input=/Users/polinalemenkova/grassdata/Mauritania/\
 	LC09_L2SP_205047_20230428_20230430_02_T1_SR_B1.TIF 
@@ -707,7 +707,7 @@ r.import input=/Users/polinalemenkova/grassdata/
 r.contour shaded_relief out=isolines step=200 --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=GRASS GIS script for image clustering and classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=GRASS GIS script for image clustering and classification,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst02}]
 # Setting computational region to match the scene
 g.region raster=L_2023_01 -p
@@ -754,7 +754,7 @@ d.out.file output=Mauritania_2023_reject format=jpg --overwrite
 
 \subsection*{Machine Learning scripts of GRASS GIS for image processing}
 
-\begin{lstlisting}[language=bash, caption=Random Forest Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Random Forest Classifier script for image classification,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst03}]
 # Generating training pixels from an older land cover classification:
 r.random input=L_2014_clusters seed=100 npoints=1000 raster=training_pixels
@@ -781,7 +781,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=RFC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Decision Tree Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Decision Tree Classifier script for image classification,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst04}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
@@ -806,7 +806,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=DTC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Gradient Boosting Classifier script for image classification,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst05}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
@@ -831,7 +831,7 @@ d.legend raster=shaded_relief title="Relief, m" title_fontsize=19
 d.out.file output=GBC_2023 format=jpg --overwrite
 \end{lstlisting}
 
-\begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier script for image classification,basicstyle=\ttfamily\footnotesize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
+\begin{lstlisting}[language=bash, caption=Support Vector Machine (SVM) Classifier script for image classification,basicstyle=\ttfamily\scriptsize,keywordstyle=\color{deepmagenta},emphstyle=\color{deepred},
 stringstyle=\color{deepblue},breaklines=true,numbers=left,label={lst06}]
 # training a model using r.learn.train
 r.learn.train group=L_2023 training_map=training_pixels \
