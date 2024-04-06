@@ -204,9 +204,9 @@ e-mails: polina.lemenkova@plus.ac.at ; polina.lemenkova2@unibo.it \\
 
 \subsection*{1.1. Background}
 
-\newpar Machine Learning (ML) is widely recognised as advanced computer application and a branch of Artificial Intelligence (AI) for handling large volumes of data \cite{YANG2024102087,RATHORE2016122,CEDRIC2022100049}, including application of Remote Sensing (RS) data processing. The advantages of the RS data for environmental and geological mapping has been discussed in many previous works (e.g., \cite{Parajuli,Niang2022,Lemenkova202321,Ashpole}). Among the benefits of the RS data, such as satellite images \citep{GRANDJEAN2006220} mentions their cost-effectiveness for geologic exploration, since space-borne Remote Sensing (RS) data enable precise coverage of vast regions, such as Africa regions, with essential data for recourse exploration. The need for satellite images for natural resources management gives rise to the question of their effective processing,
+\newpar Machine Learning (ML) is widely recognised as advanced computer application and a branch of Artificial Intelligence (AI) for handling large volumes of data \citep{YANG2024102087,RATHORE2016122,CEDRIC2022100049}, including application of Remote Sensing (RS) data processing. The advantages of the RS data for environmental and geological mapping has been discussed in many previous works (e.g., \citep{Parajuli,Niang2022,Lemenkova202321,Ashpole}). Among the benefits of the RS data, such as satellite images \citep{GRANDJEAN2006220} mentions their cost-effectiveness for geologic exploration, since space-borne Remote Sensing (RS) data enable precise coverage of vast regions, such as Africa regions, with essential data for recourse exploration. The need for satellite images for natural resources management gives rise to the question of their effective processing,
 
-\newpar With the recent advances of computing and programming technologies, more and more RS data, namely satellite images, can be processed using ML \citep{BELMAHDI2023100906,Lemenkova202021}. Correspondingly, new types of methods of satellite image processing based on ML emerged recently. The key feature and advantage of ML consists in its capability to imitate intelligent human behavior in the algorithms of image processing and pattern recognition \citep{EBRAHIMY2023103390,PANDE2024141035,Lemenkova202217}. These approaches, named ML-based, are typically distinguished from conventional GIS methods of image classification and processing by their advanced data handling consisting of application of neural networks for geospatial analysis. 
+\newpar With the recent advances of computing and programming technologies, more and more RS data, namely satellite images, can be processed using ML \citep{BELMAHDI2023100906,Lemenkova202021,GOMEZ201929}. Correspondingly, new types of methods of satellite image processing based on ML emerged recently. The key feature and advantage of ML consists in its capability to imitate intelligent human behavior in the algorithms of image processing and pattern recognition \citep{EBRAHIMY2023103390,PANDE2024141035,Lemenkova202217}. These approaches, named ML-based, are typically distinguished from conventional GIS methods of image classification and processing by their advanced data handling consisting of application of neural networks for geospatial analysis. 
 
 \newpar ML methods can be applied for pattern detection and categorisation of land cover types, which could be regarded as a new technical tools of satellite image processing in cartography and geoinformatics. ML-based image processing, as in the case of environmental mapping, can be integrated into various applications of land management. For example, climate-related events such as droughts of floods may change existing landscape patterns and make the current maps of land cover types outdated. In particular, at the current stage, satellite images can be processed by ML methods for supervised classification using training data and machine logic, as pixel-based \citep{RAHMAN2020100410,AYOADE2023337} or object-based \citep{KARILA2023100046,Lemenkova202024,Lemenkova201528}. The advantages of both approaches were discussed in details in earlier review works \citep{NASIRI2023103555,ABUJAYYAB2023101802}. 
 
@@ -227,7 +227,7 @@ Instead of unsupervised classification available in traditional software and clu
 
 \newsection {2. STUDY AREA}
 
-\newpar The study area is located in the coastal region of West Mauritania which includes the salt pan of the Sebkha de Ndrhamcha, Figure \ref{fig01}. Physical processes affecting the formation of sebkhas include the sedimentation in coastal, fluvial and lacustrine environments as well as eolian-dominated conditions (the strength and direction of winds). For instance, the Atlantic continental margin to the west of Sahara presents one of the largest dust sources on earth and is strongly influenced by mass wasting processes \cite{HENRICH2010178}. Huge aeolian dune fields affect the sedimentary regime on the continental slope and surrounding sebkhas.
+\newpar The study area is located in the coastal region of West Mauritania which includes the salt pan of the Sebkha de Ndrhamcha, Figure \ref{fig01}. Physical processes affecting the formation of sebkhas include the sedimentation in coastal, fluvial and lacustrine environments as well as eolian-dominated conditions (the strength and direction of winds). For instance, the Atlantic continental margin to the west of Sahara presents one of the largest dust sources on earth and is strongly influenced by mass wasting processes \citep{HENRICH2010178}. Huge aeolian dune fields affect the sedimentary regime on the continental slope and surrounding sebkhas.
 
 \begin{figure}[H]
 \centering
@@ -236,7 +236,7 @@ Instead of unsupervised classification available in traditional software and clu
 	\label{fig01}}
 \end{figure}
 
-The prevalence of one or more of these settings favours formation of the salt pans and results in different level of their salinity \cite{TARI2017331}. Thus, marine coastal sabkhas are more associated with the processes of evaporation and accumulation of marine deposites, while continental playas, or interdune sabkhas are related to barchan formation and dune mobility \cite{HANDFORD1981255,Ould}. Different salinity of salt lake sediments enables to distinguish the north-west Africa hypersaline chotts with saline levels surpassing that of ocean water due to high concentrations of brines \citep{Lemenkova202313} and unvegetated sebkhet with moderate salinity \citep{Lemenkova202322} from vegetated sebkhets with a relatively low salinity that ranges from 2 to 42 g NaCl per litre \citep{SOULIEMARSCHE200869}.
+The prevalence of one or more of these settings favours formation of the salt pans and results in different level of their salinity \citep{TARI2017331}. Thus, marine coastal sabkhas are more associated with the processes of evaporation and accumulation of marine deposites, while continental playas, or interdune sabkhas are related to barchan formation and dune mobility \citep{HANDFORD1981255,Ould}. Different salinity of salt lake sediments enables to distinguish the north-west Africa hypersaline chotts with saline levels surpassing that of ocean water due to high concentrations of brines \citep{Lemenkova202313} and unvegetated sebkhet with moderate salinity \citep{Lemenkova202322} from vegetated sebkhets with a relatively low salinity that ranges from 2 to 42 g NaCl per litre \citep{SOULIEMARSCHE200869}.
 
 \newpar The geologic setting of the Western Mauritania is presented by a series of Quaternary marine deposits formed in gulfs of the Senegalo-Mauritanian Tertiary-Cretaceous basin, Figure \ref{fig02}. During the uplift of the basin in Miocene, this area undergone four successive transgressions and three regressions which resulted in the accumulated continental formations covering marine deposits with sandy-glauconitic facies and diatomite layers \citep{barry2003contribution}. Several periods of eustatic movements of the world's oceans formed current Quaternary shape of the coastal zone in West Mauritania with lakes and lagoons becoming sebkhas and bays becoming lagoons during the alternating periods \citep{EINSELE1974282,Elouard}.
 
@@ -271,11 +271,35 @@ The prevalence of one or more of these settings favours formation of the salt pa
 
 \newpar Similar to other regions of Sahara with salt lakes (e.g., \cite{ALI20231}), the formation of sal pans in Mauritania is related to salt tectonics and accumulation of evaporite deposits. Besides strong climate factors, the impact of geologic setting on the formation of salt pans is explained by rift geometries which are defined by horsts and tilted fault-blocks and generate base-salt flat topography which affects salt accumulation, flow direction, diapirism and deformation of overburden layers \citep{Pichel}. The distribution of salt minerals is mostly concentrated in desert areas with highly arid climate, i.e., where evaporation exceeds precipitation. In Africa, a typical region for the formation salt lakes, salt pans, chotts and sebkhas is northern region affected by Sahara \citep{VANASTEN200313,ALVARO2012209}. The crust of salt deposits and salty compacted sands creates natural resources for the country where salt is being produced for market and industrial purposes. 
 
-\newpar Current environmental problems in the region include risks if flooding in Nouakchott which are due to a combination of both natural factors (wave actions) and human activities (infrastructure built along the coasts and fragility of the barrier beach) \citep{Senhoury2016,ould2007risques}. Lack of effective drainage system for rain and marine waters and a sewage sanitation system increases the problem of salt accumulation along the coasts of Mauritania and creates additional factors for soil salinisation. Exaggerated by flat topographic landforms of the coasts, this area is open to occasional inundations and floods \citep{Vermeer2010}. Sea water intrusion contributes to the increases of the salinity in the coastal areas and supports formation of sebkhas and accumulation of salt in the submerged landscape patches. Besides, effects of human activities and climate change lead to the declining of groundwater resources which is especially notable for semi-arid areas of Mauritania \citep{MOHAMED2017280}.
+\newpar Current environmental problems in the region include risks if flooding in Nouakchott which are due to a combination of both natural factors (wave actions and wind strength) \citep{semega2008energie} and human activities (infrastructure built along the coasts and fragility of the barrier beach) \citep{Senhoury2016,ould2007risques}. For instance, the semi-arid climate of Mauritania creates additional constraints for agriculture activities which results in construction of large-scale irrigation schemes aimed at increase of yield and irrigation intensity \citep{BORGIA20121}. Nevertheless, unsustainable crop management threats ecological sustainability of coastal areas and contributes to the salinisation of soils. Lack of effective drainage system for rain and marine waters and a sewage sanitation system increases the problem of salt accumulation along the coasts of Mauritania and creates additional factors for soil salinisation around Nouakchott. 
+
+\newpar Flat topographic landforms of the Mauritanian coasts along the Atlantic Ocean, such as the extent of the Aftout Es Sahli -- a geomorphological depression running parallel to the coastline, and Sebkha N'Dramcha -- a salt pan continuing the Senegalese–Mauritanian sedimentary basin to the north off Nouakchott, create additional risks for the occasional inundations and floods \citep{Vermeer2010}. Sea water intrusion contributes to the increases of the salinity in the coastal areas and supports formation of sebkhas and accumulation of salt in the submerged landscape patches. Another notable characteristics of the Mauritanian coasts is the upwelling system which is formed by the effects of the coastal slope topography, ocean currents and winds. The coastal region off Mauritania is characterised by almost permanent upwelling with maximal intensity in boreal winter and spring \citep{Versteegh}.
+
+\newpar The cumulative effects of human activities and climate processes, briefly discussed above, lead to the decline of groundwater resources in Mauritania which is especially notable for its semi-arid areas   \citep{MOHAMED2017280}. All these factors lead to the crucial problems of water deficits and their associated shortages in Mauritania such as the need for water desalination and the problem of water supply \citep{BAYODRUJULA201099} and contributes to the formation of the salt pan Sebkha de Ndrhamcha. 
 
 \newsection {2. MATERIALS AND METHODS}
 
-\newpar The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
+\newpar The data used in this study include six satellite multispectral images Landsat, with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for November months for years 2014, 2017, 2018, 2020, 2022 and 2023.
+
+\begin{table}[H]
+\small
+\caption{Metadata of the satellite images used in this study: Landsat-8 OLI/TIRS USGS \textsuperscript{1}.\label{tab1}}
+\begin{tabularx}{\textwidth}{cc}
+			\toprule
+			\textbf{Method} & \textbf{Processing Time} \\
+			\midrule
+			Clustering & - \\
+			Min-max discriminant analysis & - \\
+			Random Forest Classifier & 9 minutes  \\
+			Decision Tree Classifier & $<$ 1 minute (ca. 34 sec) \\
+			Gradient Boosting Classifier & 23 minutes  \\
+			Support Vector Machine Classifier & 47 minutes  \\
+			\bottomrule
+\end{tabularx}
+	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
+\end{table}
+
+The map in Figure 1 showing topographic setting and the location of the study are is made using the Generic Mapping Tools Version 6.4.0 scripting toolset \citep{Wessel}. The programming scripts used for cartographic techniques are described in earlier works, (e.g. \citep{Lemenkova202203,Lemenkova202216,Lemenkova202212}).
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.35\textwidth}
@@ -315,7 +339,7 @@ The prevalence of one or more of these settings favours formation of the salt pa
 
 \begin{table}[H]
 \small
-\caption{Metadata of the satellite images used in this study: Landsat-8 OLI/TIRS USGS \textsuperscript{1}.\label{tab1}}
+\caption{Processing time of the satellite images Landsat-8 OLI/TIRS showing the effectiveness of ML methods executed by the GRASS GIS \textsuperscript{1}.\label{tab2}}
 \begin{tabularx}{\textwidth}{cc}
 			\toprule
 			\textbf{Method} & \textbf{Processing Time} \\
@@ -330,8 +354,6 @@ The prevalence of one or more of these settings favours formation of the salt pa
 \end{tabularx}
 	\noindent{\footnotesize{\textsuperscript{1} The Sensor ID is common for all the scenes: Landsat OLI/TIRS (Operational Land Imager and Thermal Infrared Sensor), Collection 2 Level-2. Image courtesy of the U.S. Geological Survey (USGS). Product DOI: \href{https://doi.org/10.5066/P9OGBGM6}{10.5066/P9OGBGM6}.}}
 \end{table}
-
-Classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS.
 
 \pagebreak
 \newsection {3. RESULTS AND DISCUSSION}
