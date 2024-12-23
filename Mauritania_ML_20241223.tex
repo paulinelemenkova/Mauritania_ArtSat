@@ -15,6 +15,7 @@
 \usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage{changepage}
 \usepackage{threeparttablex}
+\usepackage{longtable}
 
 \usepackage{cite}
 	\renewcommand\citepunct{,}
@@ -400,17 +401,91 @@ The land categories for the years 2014 to 2013 and their statistics are presente
 
  \begin{table}[H]
   \centering
-  \begin{tabularx}{\textwidth}{p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}p{1.3cm}}
+  \scriptsize
+  \begin{tabularx}{\textwidth}{p{0.8cm}|p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}|p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}|p{0.8cm}p{0.8cm}p{0.8cm}p{0.8cm}}
   \toprule
-  \multirow{2}{*}{Year} & \multicolumn{4}{c}{Cohen's Kappa quantification of agreement } & \multicolumn{4}{c}{F-1 score of predictive performance}\\
-      & RF & SVM & DTC & GBC & RF & SVM & DTC & GBC  \\
+  \multirow{2}{*}{Year} & \multicolumn{4}{c}{Producer's accuracy, \%} & \multicolumn{4}{c}{User's accuracy, \%} & \multicolumn{4}{c}{Kappa statistics}\\
+      & RF & SVM & DTC & GBC & RF & SVM & DTC & GBC & RF & SVM & DTC & GBC \\
     \midrule
-    \textbf{2014} & 0.73 & 0.78 & 0.84  & XXX & 0.78 & 0.82 & 0.92 & XXX \\
-    \textbf{2017} & 0.73 & 0.73 & 0.82  & XXX & 0.77 & 0.84 & 0.91 & XXX \\
-    \textbf{2018} & 0.71 & 0.74 & 0.81 & XXX & 0.77 & 0.79 & 0.92 & XXX \\
-    \textbf{2020} & 0.80 & 0.81 & 0.83  & XXX & 0.81 & 0.81 & 0.95 & XXX \\
-     \textbf{2022} & 0.78 & 0.79 & 0.85  & XXX & 0.84 & 0.83 & 0.96 & XXX \\
-    \textbf{2023} & 0.76 & 0.77 & 0.86 & XXX & 0.83 & 0.82 & 0.94 & XXX \\
+    \multicolumn{13}{c}{Land Cover Class 1: Water bodies} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 2: Shelf and coastal plains} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 3: Sebkha} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 4: Urban areas} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 5: Sahelian grassland} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 6: Salty sands} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 7: Compact soil} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 8: Stony desert and yellow dunes} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 9: Sandy desert and white dunes} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
+\bottomrule
+\multicolumn{13}{c}{Land Cover Class 10: Bare soil and rocks} \\
+    \textbf{2014} & 77 & 83 & 74  & 71 & 78 & 88 & 62 & 62 & 0.80 & 0.74 & 0.65 & 0.65 \\
+    \textbf{2017} & 78 & 84 & 72  & 70 & 77 & 85 & 65 & 67 & 0.81 & 0.93 & 0.53 & 0.59 \\
+    \textbf{2018} & 76 & 79 & 75 & 69 & 71 & 79 & 66 & 68 & 1.00 & 0.90 & 0.69 & 0.61 \\
+    \textbf{2020} & 81 & 81 & 73  & 72 & 89 & 89 & 68 & 72 & 0.93 & 0.95 & 0.58 & 0.61 \\
+     \textbf{2022} & 82 & 80 & 65  & 73 & 82 & 73 & 75 & 74 & 0.95 & 0.70 & 0.84 & 1.00 \\
+    \textbf{2023} & 79 & 82 & 66 & 68 & 77 & 74 & 74 & 70 & 0.74 & 0.79 & 0.83 & 0.67 \\
 \bottomrule
 \end{tabularx}
   \caption{\hl{Accuracy assessment for ML models in GRASS GIS: 1) Random Forest (RF); 2) Support Vector Machine (SVM); 3) Decision Tree Classifier (DTC); 4) Gradient Boosting Classifier (GBC). Estimated classes of land cover types for 2014--2023 in West Mauritania.}}
