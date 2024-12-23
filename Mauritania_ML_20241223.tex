@@ -285,7 +285,9 @@ The prevalence of one or more of these settings favours formation of the salt pa
 
 \newsection {2. MATERIALS AND METHODS}
 
-\newpar The data used in this study include six satellite multispectral images Landsat by National Aeronautics and Space Administration (NASA), with main characteristics summarised in Table \ref{tab1}. Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. The raw images are presented in Figure \ref{fig05} showing scenes for April months for years 2014, 2017, 2018, 2020, 2022 and 2023.
+\newpar The data used in this study include six satellite multispectral images Landsat by National Aeronautics and Space Administration (NASA), with main characteristics summarised in Table \ref{tab1}. \hl{The input raster scenes were based on the six Landsat images. The imagery data of the Landsat 8-9 OLI/TIRS satellites were used in this study because they offer systematic coverage of the study are with minimal cloudiness. Besides, technical characteristics of the radiometric, and geometric features of the scenes are suitable for the environmental monitoring in short-term period (2014-2023) using pixel-based methods of image processing. Such tools are applicable in GRASS GIS which automation of a wide range of image classification algorithms through its libraries, including ML. }
+
+Image analysis and classification of the Landsat 8-9 OLI/TIRS satellite images using \hl{pixel-based} clustering method was done by k-means and unsupervised method which is included in the maximum-likelihood discriminant analysis classifier by GRASS GIS. \hl{Pixel-based image classification techniques, such as k-means, are becoming more and more acknowledged as a useful cartography methods for RS data processing to take advantage of the vast amounts of spaceborne data. Such methods enable to creating representative maps for annual or seasonal time periods to use either as input for model building or as visualization of the environmental situation in the given period}. The raw images are presented in Figure \ref{fig05} showing scenes for April months for years 2014, 2017, 2018, 2020, 2022 and 2023.
 
 \begin{table}[H]
 \scriptsize
@@ -375,7 +377,7 @@ The prevalence of one or more of these settings favours formation of the salt pa
 The land categories for the years 2014 to 2013 and their statistics are presented in Table \ref{tab3}. Here, the land cover classes are designated as the following categories: 1) Water bodies; 2) Shelf and coastal plains; 3) Sebkha; 4) Urban areas; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks. 
 
 \begin{table}[H]
-\caption{Estimated classes of land cover types in Western Mauritania, Sebkha de Ndrhamcha, for April period}
+\caption{Estimated classes of land cover types in Western Mauritania, Sebkha de Ndrhamcha, for April period. \hl{Map units in measurements: 30 m resolution for each pixel on the multispectral scene of Landsat 8-9 OLI/TIRS}}
   \centering
   \begin{tabularx}{\textwidth}{p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}p{0.9cm}}
   \toprule
