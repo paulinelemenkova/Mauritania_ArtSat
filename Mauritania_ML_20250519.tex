@@ -508,9 +508,9 @@ e-mails: polina.lemenkova2@unibo.it
     \hline
 \end{longtable}
 
-\newpar The Producer's accuracy indicates the proportion of the pixels that are correctly classified and belong to a target land cover type. The Cohen's Kappa coefficient measures the difference between the actual reference between the data based on the Overall accuracy and the actual results of the land cover classification. In other words, it shows the actual changes between the referenced data and a randomly selected pixel classified using given method. As other correlation statistics, the Kappa values can range from --1 to +1. The interpretation of values is as follows. Values of the levels above 60\% to 80\% have a moderate accuracy of pixel's classification, while those above 80\% are acceptable and generally demonstrate accurate identification of target class. 
+\newpar The Producer’s accuracy indicates the proportion of pixels that are correctly classified and belong to a target land cover type. The Cohen’s Kappa coefficient measures the difference between the actual reference between the data based on the overall accuracy and the actual results of the land cover classification. In other words, it shows the actual changes between the referenced data and a randomly selected pixel classified using a given method. As other correlation statistics, the Kappa values can range from –1 to +1. The interpretation of values is as follows. Values of the levels above 60\%–80\% have a moderate accuracy of pixel’s classification, while those above 80\% are acceptable and generally demonstrate accurate identification of target class.
 
-\newpar Consequently, the values approaching above 90\% and nearly 100\% indicate almost perfect classification results. Thus, the SVM and RF techniques can be evaluated as a robust approaches of GRASS GIS for RS data classification based on accuracy, followed by the DTC and GBC methods. The overall classification accuracy is above 80\% with a corresponding overall Kappa coefficient above 0.85 (Table \ref{tab04}). Such results demonstrate robust conceptual agreement of the processed data with ground truth. This indicates that GRASS GIS has a reliable algorithms of RS data processing that can be used in similar works.
+\newpar Consequently, the values approaching above 90\% and nearly 100\% indicate almost perfect classification results. Thus, the SVM and RF techniques can be evaluated as robust approaches of GRASS GIS for RS data classification based on accuracy, followed by the DTC and GBC methods. The overall classification accuracy is above 80\% with a corresponding overall Kappa coefficient above 0.85 (Table \ref{tab04}). Such results demonstrate robust conceptual agreement of the processed data with ground truth. This indicates that GRASS GIS has a reliable algorithm of RS data processing that can be used in similar works.
 
 \subsection*{Clustering}
 
@@ -552,7 +552,7 @@ e-mails: polina.lemenkova2@unibo.it
 \vspace*{20pt}\caption{Classified Landsat 8-9 OLI/TIRS images using clustering: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig06}
 \end{figure}
 
-\newpar The accuracy assessment performed using the estimated rejection probability is shown in Figure \ref{fig07}. It shows the correctness of the pixels associated with each land cover class according to the clustering method of k-means, used in GRASS GIS. The map of land cover types for 2014 had an overall kappa statistic of 0.97 and an overall accuracy of 98.34\% which indicated the correctly classified pixels with stable points, the classification for 2017 had overall accuracy of 98.08\%, for year 2018 -- 98.29\%, for 2020 -- 98.36\%, for 2022 -- 98.64\% and for year 2023 -- 98.56\% of computed overall accuracy.  
+\newpar The accuracy assessment performed using the estimated rejection probability is shown in Figure \ref{fig07}. It shows the correctness of the pixels associated with each land cover class according to the clustering method of k-means used in GRASS GIS. The map of land cover types for 2014 had an overall kappa statistic of 0.97 and an overall accuracy of 98.34\%, which indicated the correctly classified pixels with stable points. The classification for 2017 had an overall accuracy of 98.08\%, 98.29\% for the year 2018, 98.36\% for 2020, 98.64\% for 2022 and 98.56\% of the computed overall accuracy for the year 2023.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -594,9 +594,9 @@ e-mails: polina.lemenkova2@unibo.it
 
 %---------------------ML -------------->
 
-\subsection*{Random Forest Classifier}
+\subsection*{RF Classifier}
 
-The results of the Random Forest classification applied for mapping sebkhas are shown in Figure \ref{fig08}. The following 10 land cover classes were identified and visualised, Figure \ref{fig06}: 1) Water bodies; 2) Shelf and coastal plains; 3) Sebkha; 4) Urban areas; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes; 10) Bare soil and rocks. 
+The results of RF classification applied for mapping sebkhas are shown in Figure \ref{fig08}. The following 10 land cover classes were identified and visualised (Figure \ref{fig06}): 1) Water bodies; 2) Shelf and coastal plains; 3) Sebkha; 4) Urban areas; 5) Sahelian grassland; 6) Salty sands; 7) Compact soil; 8) Stony desert and yellow dunes; 9) Sandy desert and white dunes and 10) Bare soil and rocks.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
