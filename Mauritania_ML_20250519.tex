@@ -638,7 +638,7 @@ The results of the Random Forest classification applied for mapping sebkhas are 
 
 \subsection*{Decision Tree Classifier}
 
-Based on the presented the results, the largest category was barren land subdivided into different classes (Salty sands, Compact soil; Stony desert and yellow dunes; Sandy desert and white dunes), followed by vegetation class (Sahelian grassland) and salt pan (Class 2 of sebkha). The other land use categories included water surfaces, built-up urban areas and agricultural lands. Using the maps demonstrated on the series of images processed by Decision Tree classification, the distinct land cover classes are visualised for the study area, including the location of sebkhas and its changing extent over the years, Figure \ref{fig09}.
+Based on the presented results, the largest category was barren land subdivided into different classes (Salty sands, Compact soil, Stony desert and yellow dunes, Sandy desert and white dunes), followed by vegetation class (Sahelian grassland) and salt pan (Class 2 of sebkha). The other land use categories included water surfaces, built-up urban areas and agricultural lands. Using the maps demonstrated on the series of images processed by Decision Tree classification, the distinct land cover classes are visualised for the study area, including the location of sebkhas and its changing extent over the years (Figure \ref{fig09}).
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -680,7 +680,7 @@ Based on the presented the results, the largest category was barren land subdivi
 
 \subsection*{Gradient Boosting Classifier}
 
-The areas of diverse land cover types detected using Gradient Boosting classification method and their changes over the evaluated periods are presented in Figure \ref{fig10}. According to the analysis on satellite images processed by Support vector machines, the largest extent of wetlands was reached in 2017 and reduced in consecutive years (2018 to 2022) after which recovered in extent in 2023, Figure \ref{fig10}.
+The areas of diverse land cover types detected using Gradient Boosting classification method and their changes over the evaluated periods are presented in Figure \ref{fig10}. According to the analysis on satellite images processed by SVMs, the largest extent of wetlands was reached in 2017 and it reduced in consecutive years (2018–2022), after which the extent recovered in 2023 (Figure \ref{fig10}).
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -720,9 +720,9 @@ The areas of diverse land cover types detected using Gradient Boosting classific
 \vspace*{20pt}\caption{Gradient Boosting Classifier of Machine Learning (ML) classification methods applied for processing of satellite images: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig10}
 \end{figure}
 
-\subsection*{Support Vector Machine (SVM) Classifier}
+\subsection*{SVM Classifier}
 
-The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to reveal hidden information on land cover types and changes in landscape patterns in west Mauritania through processed satellite images Landsat, Figure \ref{fig11}. 
+The SVM method of ML approach of GRASS GIS enabled to reveal hidden information on land cover types and changes in landscape patterns in West Mauritania through processed satellite Landsat images (Figure \ref{fig11}). 
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{.5\textwidth}
@@ -762,7 +762,7 @@ The Support Vector Machine (SVM) method of ML approach of GRASS GIS enabled to r
 \vspace*{20pt}\caption{Support Vector Machine (SVM) Classifier of Machine Learning (ML) classification methods applied for processing of satellite images: (\textbf{a}) 2014, (\textbf{b}) 2017, (\textbf{c}) 2018, (\textbf{d}) 2020, (\textbf{e}) 2022, (\textbf{f}) 2023. Software: GRASS GIS. Source of maps: author.}\label{fig11}
 \end{figure}
 
-\newpar The results revealed that the largest land cover class was Class 8 (Stony desert and yellow dunes) according to the extent of the satellite images, followed by the Class 7 of Compact soil and barren land in the desert areas which represent the dunes of the Sahara. It was then followed by water surfaces (Class 1) which occupy shelf areas and Class 7 (Compact soil of the pre-Sahara lands) and Class 6 (Salty sands located in the saline soils). The distribution of other land cover types is summarised in the Table \ref{tab3}. The smallest class is occupied by Class 2 which is represented by the narrow shelf strip of the coastal plains with specific aquatic vegetation between the water area and coastal regions.
+\newpar The results revealed that the largest land cover class was Class 8 (Stony desert and yellow dunes) according to the extent of the satellite images, followed by Class 7 (Compact soil and barren land) in the desert areas, which represent the dunes of the Sahara. It was then followed by water surfaces (Class 1), which occupy shelf areas, Class 7 (Compact soil of the pre-Sahara lands) and Class 6 (Salty sands located in the saline soils). The distribution of other land cover types is summarised in Table 3. The smallest class is occupied by Class 2, which is represented by the narrow shelf strip of the coastal plains with specific aquatic vegetation between the water area and coastal regions.
 
 \newpar It is worth comparing the classifier algorithms used in this study—RF Classifier, DTC, GBC and SVM Classifier—with CNNs, which provides the following remarks. In contrast to the ML methods, Deep Learning (DL) approaches have also increasingly been applied to the tasks of spatial data processing, including image classification or segmentation. Among them, the CNN method has distinct methodological framework. Thus, in contrast to RF or SVM, CNN consists of a sequence of three layers: convolution, non-linearity and pooling.
 
